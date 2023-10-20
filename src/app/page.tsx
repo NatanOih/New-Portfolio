@@ -5,6 +5,7 @@ import Intro from "@/components/Intro";
 import ProgressBar from "@/components/ProgressBar";
 import Projects from "@/components/Projects";
 import SectionDevider from "@/components/SectionDevider";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
       <div className="py-2" />
       <SectionDevider />
       <div className="py-2" />
-      <Projects />
+      {/* <Projects /> */}
       <div className="py-2" />
       <Experience />
       <div className="py-2" />

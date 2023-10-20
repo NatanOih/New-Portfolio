@@ -47,3 +47,27 @@ export function useIsTouchDevice() {
 
   return touchDevice;
 }
+
+export const useMousePoistion = (condition: boolean) => {
+  const [position, setMousePoistion] = useState<any>({});
+
+  useEffect(() => {
+    const mousemove = (e: MouseEvent) => {
+      setMousePoistion({ x: e.pageX, y: e.pageY });
+    };
+
+    if (condition) {
+      window.addEventListener("mousemove", mousemove);
+    }
+    return () => {
+      if (condition) {
+        window.removeEventListener("mousemove", mousemove);
+      }
+    };
+  }, [condition]);
+
+  return {
+    x: position.x,
+    y: position.y,
+  };
+};

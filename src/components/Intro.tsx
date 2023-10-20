@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsGithub, BsLinkedin } from "react-icons/bs";
@@ -9,7 +9,7 @@ import { HiDownload } from "react-icons/hi";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
 
-export const staggerLetters = {
+const staggerLetters = {
   initial: {
     y: -100,
   },
@@ -23,15 +23,30 @@ export const staggerLetters = {
 };
 
 export default function Intro() {
+  const [loading, setLoading] = useState<boolean>(true);
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="h-[100vh] w-full bg-slate-400 flex justify-center items-center">
+        loading..
+      </div>
+    );
+  }
   return (
     <section
       ref={ref}
       id="home"
       className="py-6 h-[100vh] sm:py-0 max-w-[50rem] flex flex-col gap-8 justify-center scroll-mt-28 items-center"
     >
-      <div className="flex items-center justify-center">
+      {/* <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
@@ -66,10 +81,10 @@ export default function Intro() {
             🐱‍🐉
           </motion.span>
         </div>
-      </div>
+      </div> */}
 
       <p className="font-medium text-center whitespace-pre flex flex-wrap !leading-[1.5] text-2xl sm:text-4xl">
-        {"Hello, I`m Natan, A fullstack developer. "
+        {'Fullstack Developer, "Quality Is Not An Act, It Is A Habit '
           .split(/(?!$)/u)
           .map((letter, index) => {
             return (
@@ -86,7 +101,7 @@ export default function Intro() {
           })}
       </p>
 
-      <motion.div
+      {/* <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{
@@ -131,7 +146,7 @@ export default function Intro() {
         >
           <BsGithub />
         </a>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

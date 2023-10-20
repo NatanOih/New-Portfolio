@@ -33,10 +33,8 @@ export default function Contact() {
       <form
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
-          console.log("data", data);
 
           if (error) {
-            console.log("error", error);
             toast.error(error);
             return;
           }

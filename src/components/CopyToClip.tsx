@@ -1,34 +1,41 @@
 "use client";
-import getRelativeCoordinates from "@/lib/utility";
-import React, { useRef, useState } from "react";
+// import getRelativeCoordinates from "@/lib/utility";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useIsTouchDevice } from "@/lib/hooks";
+import { mousePosType } from "@/lib/types";
 
 export default function CopyToClip() {
   const [isCopied, setIsCopied] = useState(false);
   const [hoverNotification, setHoverNotification] = useState(false);
-  const [mousePosition, setMousePosition] = useState<any>({});
-
+  // const [mousePosition, setMousePosition] = useState<any>({});
+  // const globalPos = useMousePoistion(hoverNotification);
+  const [localMousePos, setLocalMousePos] = useState<mousePosType>({
+    x: 0,
+    y: 0,
+  });
+  // const boxRef = useRef<any>();
   const isTouch = useIsTouchDevice();
 
-  const boxRef = useRef<any>();
   const handleMouseMove = (e: any) => {
-    setMousePosition(getRelativeCoordinates(e, boxRef.current));
+    // setMousePosition(getRelativeCoordinates(e, boxRef.current));
+
+    const localX =
+      e.pageX - e.target.offsetLeft - e.target.offsetParent.offsetLeft;
+    const localY =
+      e.pageY - e.target.offsetTop - e.target.offsetParent.offsetTop;
+    setLocalMousePos({ x: localX, y: localY });
   };
 
-  async function copyTextToClipboard(text: string) {
-    if ("clipboard" in navigator) {
-      return await navigator.clipboard.writeText(text);
-    } else {
-      return document.execCommand("copy", true, text);
-    }
-  }
+  // async function copyTextToClipboard(text: string) {
+  //   return await navigator.clipboard.writeText(text);
+  // }
 
   const handleCopyClick = () => {
-    // Asynchronously call copyTextToClipboard
-    copyTextToClipboard("natanoih@gmail.com")
+    // copyTextToClipboard("natanoih@gmail.com")
+    navigator.clipboard
+      .writeText("natanoih@gmail.com")
       .then(() => {
-        // If successful, update the isCopied state value
         setIsCopied(true);
         if (isTouch) {
           setHoverNotification(true);
@@ -47,7 +54,7 @@ export default function CopyToClip() {
 
   return (
     <p
-      ref={boxRef}
+      // ref={boxRef}
       className="text-gray-700 dark:text-white/80 relative py-8 text-center"
     >
       {" "}
@@ -65,7 +72,9 @@ export default function CopyToClip() {
           }, 30);
         }}
         onMouseMove={(e) => {
-          handleMouseMove(e);
+          setTimeout(function () {
+            handleMouseMove(e);
+          }, 20);
         }}
         onClick={handleCopyClick}
       >
@@ -75,17 +84,17 @@ export default function CopyToClip() {
       {hoverNotification ? (
         <motion.span
           initial={{
-            x: mousePosition?.x - 300,
-            y: mousePosition?.y - 100,
+            x: localMousePos?.x - 70,
+            y: localMousePos?.y - 70,
             opacity: 0,
           }}
           animate={{
             opacity: 1,
-            x: mousePosition?.x - 50,
-            y: mousePosition?.y - 50,
+            x: localMousePos.x + 100,
+            y: localMousePos.y - 25,
           }}
           transition={{ type: "spring" }}
-          className="absolute left-0 top-0  p-2 rounded bg-gray-950 text-white opacity-80"
+          className="absolute left-0 top-0 p-2 rounded bg-gray-950 text-white opacity-80"
         >
           {" "}
           {isCopied ? "Copied to clipboard" : "Copy"}{" "}

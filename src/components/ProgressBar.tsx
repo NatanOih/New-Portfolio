@@ -11,7 +11,7 @@ export default function ProgressBar() {
   });
   return (
     <motion.div
-      className="fixed left-1 top-1 w-[5px]  bottom-1 bg-[#222] "
+      className="fixed left-1 top-1 w-[5px]  bottom-1 dark:bg-white/60 bg-[#222] "
       style={{ scaleY }}
     />
   );
