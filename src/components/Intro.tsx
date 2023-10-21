@@ -1,13 +1,14 @@
 "use client";
 
-import Image from "next/image";
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { BsArrowRight, BsGithub, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
-import { useSectionInView } from "@/lib/hooks";
-import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
+// import Image from "next/image";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
+// import Link from "next/link";
+// import { BsArrowRight, BsGithub, BsLinkedin } from "react-icons/bs";
+// import { HiDownload } from "react-icons/hi";
+import { useIsTouchDevice, useParallax, useSectionInView } from "@/lib/hooks";
+// import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
+import LetterTextComponent from "./LetterTextComponent";
 
 const staggerLetters = {
   initial: {
@@ -22,10 +23,22 @@ const staggerLetters = {
   }),
 };
 
+const introText = [
+  "fullstack",
+  "developer",
+  "gap",
+  '"quality is',
+  "not an act",
+  'it is a habbit."',
+];
 export default function Intro() {
   const [loading, setLoading] = useState<boolean>(true);
   const { ref } = useSectionInView("Home", 0.5);
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  // const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const isTouch = useIsTouchDevice();
+  const scrollRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: scrollRef });
+  const y = useParallax(scrollYProgress, 300);
 
   useEffect(() => {
     setTimeout(() => {
@@ -35,7 +48,7 @@ export default function Intro() {
 
   if (loading) {
     return (
-      <div className="h-[100vh] w-full bg-slate-400 flex justify-center items-center">
+      <div className="h-[100vh] fixed top-0 w-full bg-slate-400 flex justify-center items-center">
         loading..
       </div>
     );
@@ -44,62 +57,43 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="py-6 h-[100vh] sm:py-0 max-w-[50rem] flex flex-col gap-8 justify-center scroll-mt-28 items-center"
+      className=" relative h-full w-full flex flex-col gap-8 p-8 justify-center scroll-mt-28 items-center"
     >
-      {/* <div className="flex items-center justify-center">
-        <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "tween",
-              duration: 0.2,
-              delay: 0.2,
-            }}
-          >
-            <Image
-              src="/randomPhoto.jpg"
-              width={192}
-              height={192}
-              quality="100"
-              alt="image"
-              priority={true}
-              className="border-[0.35rem]  border-gray-50 shadow-xl "
-            />
-          </motion.div>
-          <motion.span
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 125,
-              delay: 0.6,
-              duration: 0.4,
-            }}
-            className="text-4xl bottom-0 right-0 absolute"
-          >
-            🐱‍🐉
-          </motion.span>
-        </div>
-      </div> */}
-
-      <p className="font-medium text-center whitespace-pre flex flex-wrap !leading-[1.5] text-2xl sm:text-4xl">
-        {'Fullstack Developer, "Quality Is Not An Act, It Is A Habit '
-          .split(/(?!$)/u)
-          .map((letter, index) => {
-            return (
-              <motion.span
-                variants={staggerLetters}
-                initial="initial"
-                animate="animate"
-                custom={index}
-                key={index}
-              >
-                {letter}
-              </motion.span>
-            );
-          })}
-      </p>
+      <div
+        className={`font-extrabold relative scroll-smooth w-full drop-shadow-xl shadow-xl text-start p-12 select-none overflow-hidden flex flex-col border-[9px] border-[#03001c] bg-white/10  container whitespace-pre uppercase tracking-wide lg:text-[9.2rem] leading-[7.3rem] `}
+      >
+        {introText.map((word, wordIndex) => {
+          return (
+            <motion.h1
+              className={`flex ${
+                word === "developer" || word === "not an act"
+                  ? "justify-end bg-red-800/50  rounded-full"
+                  : ""
+              }  ${
+                word === 'it is a habbit."'
+                  ? "pt-20 text-red-800/50 justify-center tracking-tight "
+                  : ""
+              } transition-all flex duration-600 ease-in-out `}
+              key={word}
+              style={{ y: y, transition: "300ms all ease-in-out" }}
+            >
+              {word == "gap" ? (
+                <div ref={scrollRef} className="py-8" />
+              ) : (
+                word.split("").map((letter, letterIndex) => (
+                  <React.Fragment key={letterIndex}>
+                    <LetterTextComponent>{letter}</LetterTextComponent>
+                  </React.Fragment>
+                ))
+              )}
+            </motion.h1>
+          );
+        })}
+        <h2 className="absolute text-base animate-bounce text right-0 bottom-0">
+          {" "}
+          Aristo{" "}
+        </h2>
+      </div>
 
       {/* <motion.div
         initial={{ scale: 0 }}

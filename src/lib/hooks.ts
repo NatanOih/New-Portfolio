@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import type { SectionName } from "./types";
 import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
+import { MotionValue, useTransform } from "framer-motion";
 
 export function useSectionInView(sectionName: SectionName, threshold = 0.75) {
   const { ref, inView } = useInView({
@@ -71,3 +72,7 @@ export const useMousePoistion = (condition: boolean) => {
     y: position.y,
   };
 };
+
+export function useParallax(value: MotionValue<number>, distance: number) {
+  return useTransform(value, [0, 1], [0, distance]);
+}

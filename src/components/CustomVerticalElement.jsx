@@ -5,7 +5,7 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component";
 
 export default function CustomVerticalElement({ item, index }) {
   const { ref, inView } = useInView({
-    threshold: 0.3,
+    threshold: 0.5,
   });
   const { theme } = useTheme();
 
