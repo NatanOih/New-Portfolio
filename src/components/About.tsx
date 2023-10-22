@@ -13,9 +13,9 @@ export default function About() {
     <motion.section
       ref={ref}
       className=" max-w-[45rem] scroll-mt-28 flex flex-col gap-2 text-center leading-8 p-8 "
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
+      // initial={{ opacity: 0, y: 100 }}
+      // animate={{ opacity: 1, y: 0 }}
+      // transition={{ delay: 0.175 }}
       id="about"
     >
       <SectionHeading>About me</SectionHeading>
