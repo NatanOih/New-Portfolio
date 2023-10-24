@@ -1,53 +1,88 @@
-import React, { useEffect, useRef, useState } from "react";
-import { motion, useScroll } from "framer-motion";
-import { useParallax } from "@/lib/hooks";
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { useScrollWithinBounds } from "@/lib/hooks";
 import LetterTextComponent from "./LetterTextComponent";
 
 type word = {
   word: string;
+  index: number;
+  scrollY: number;
 };
+// ${initialLoad ? " transition-all" : ""}
+export default function WordTextComponent({ word, index, scrollY }: word) {
+  // const { scrollY, elementRef } = useScrollWithinBounds<HTMLDivElement>();
 
-export default function WordTextComponent({ word }: word) {
-  const scrollRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: scrollRef });
   const [initialLoad, setInitialLoad] = useState(false);
-  const y = useParallax(scrollYProgress, 800);
-
   useEffect(() => {
     setTimeout(() => {
       setInitialLoad(true);
-    }, 800);
+      console.log("finished");
+    }, 1500);
   }, []);
 
   return (
     <motion.h1
-      initial={{
-        opacity: 0,
-        y: -100,
-      }}
-      animate={{
-        opacity: 1,
-        y: 0,
-      }}
-      transition={{
-        type: "spring",
-        velocity: 12,
-        bounce: 0.8,
-      }}
-      className={`flex ${
+      // ref={elementRef}
+      initial={
+        !initialLoad
+          ? {
+              opacity: 0,
+              y: -100,
+            }
+          : {}
+      }
+      animate={
+        !initialLoad
+          ? {
+              opacity: 1,
+              y: 0,
+            }
+          : { y: `${scrollY * 0.2 * (index * 0.3 + 1)}px` }
+      }
+      transition={
+        !initialLoad
+          ? {
+              type: "spring",
+              damping: 12,
+              velocity: 12,
+              bounce: 1.95,
+              restSpeed: 0.7,
+              restDelta: 0.7,
+              duration: 0.15,
+              // mass: 2,
+              stiffness: 300,
+              delay: 0.3 + index * 0.02,
+            }
+          : {
+              ease: "easeOut",
+              duration: 1,
+            }
+      }
+      className={` flex flex-row pr-[5vw]  justify-center w-[80%] ${
         word === "developer" || word === "not an act"
-          ? "justify-center bg-[#22dddd]/30 w-auto  rounded-xl"
+          ? "pl-[15vw] bg-[#22dddd]/30 w-auto  rounded-xl"
           : ""
       }  ${
         word === 'it is a habbit."'
-          ? "pt-20 text-red-800/50 justify-center lg:indent-10 md: tracking-tight "
+          ? "pt-12 text-gray-950/80 justify-center lg:indent-[0.5vw] md:indent-3 tracking-tight pl-[5vw] "
           : ""
-      } ${initialLoad ? " transition-all" : ""} `}
+      } 
+       
+        `}
       key={word}
-      style={initialLoad ? { y } : {}}
+      // style={
+      //   initialLoad
+      //     ? {
+      //         translateY: `${scrollY * 0.4 * (index * 0.3 + 1)}px`,
+      //         transition: "all 1s ease-out",
+      //       }
+      //     : {}
+      // }
     >
       {word == "gap" ? (
-        <div ref={scrollRef} className="py-8" />
+        <div className="py-6" />
       ) : (
         word.split("").map((letter, letterIndex) => (
           <React.Fragment key={letterIndex}>

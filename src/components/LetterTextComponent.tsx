@@ -21,7 +21,7 @@ export default function LetterTextComponent({
 }) {
   return (
     <motion.span
-      className={` cursor-default hover:text-slate-100/70`}
+      className={` cursor-default  hover:text-slate-100/70`}
       whileHover={{
         y: [-1, -1.6, -2.4, -0.9, 1.1, 0],
         scaleY: [1, 1.3, 0.8, 1, 1.1, 1],

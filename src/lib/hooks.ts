@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import type { SectionName } from "./types";
+import type { SectionName, mousePosType } from "./types";
 import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
 import { MotionValue, useTransform } from "framer-motion";
 
@@ -75,4 +75,58 @@ export const useMousePoistion = (condition: boolean) => {
 
 export function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [0, distance]);
+}
+
+export function useLocalMousePosition() {
+  const [localMousePos, setLocalMousePos] = useState<mousePosType>({
+    x: 0,
+    y: 0,
+  });
+  const mousePosRef = useRef<any>(null);
+
+  const handleMouseMove = (e: any) => {
+    const { offsetTop, offsetLeft } = mousePosRef?.current;
+
+    const localX = Math.round(e.clientX) - offsetLeft;
+    const localY = Math.round(e.pageY) - offsetTop;
+
+    setLocalMousePos({ x: localX, y: localY });
+  };
+
+  return { localMousePos, handleMouseMove, mousePosRef };
+}
+
+export function useScrollWithinBounds<T extends HTMLElement>() {
+  const [scrollY, setScrollY] = useState<number>(0);
+  const elementRef = useRef<T | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (elementRef.current) {
+        const element = elementRef.current;
+        const parent = element.parentElement;
+
+        if (parent) {
+          const parentTop = parent.getBoundingClientRect().top;
+          const parentBottom = parent.getBoundingClientRect().bottom;
+
+          const elementTop = element.getBoundingClientRect().top;
+          const elementBottom = element.getBoundingClientRect().bottom;
+
+          if (window.scrollY <= parentBottom + 500) {
+            setScrollY(window.scrollY);
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      // setScrollY(0);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return { scrollY, elementRef };
 }
