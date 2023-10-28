@@ -4,8 +4,6 @@ import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import sudokuIMG from "/public/sudokuIMG.png";
 
-// const sudokuIMG = "/sudokuIMG.png";
-
 export const links = [
   {
     name: "Home",
@@ -16,13 +14,13 @@ export const links = [
     hash: "#about",
   },
   {
+    name: "Skills",
+    hash: "#skills",
+  },
+  {
     name: "Projects",
     hash: "#projects",
   },
-  // {
-  //   name: "Skills",
-  //   hash: "#skills",
-  // },
   {
     name: "Experience",
     hash: "#experience",
@@ -128,4 +126,35 @@ export const skillsData = [
   "Python",
   "Django",
   "Framer Motion",
+] as const;
+
+export const frontEndImg = [
+  { name: "HTML/CSS", path: "coding.png" },
+  { name: "JavaScript", path: "js.png" },
+  { name: "TypeScript", path: "ts.png" },
+  { name: "React", path: "react.png" },
+  { name: "Redux", path: "redux-icon.png" },
+  { name: "TailwindCSS", path: "tailwind-css-icon.png" },
+  { name: "Bootstrap", path: "bootstrap.png" },
+  { name: "matirialui", path: "matirialui.png" },
+  { name: "styled-components", path: "styled-components.png" },
+  { name: "gsap", path: "gsap.png" },
+  { name: "motion", path: "motion.png" },
+] as const;
+
+export const backEndImg = [
+  { name: "nodeJS", path: "node.png" },
+  { name: "expressJs", path: "expressjs.png" },
+  { name: "Nextjs", path: "Nextjs-logo.png" },
+  { name: "API", path: "api-icon.png" },
+  { name: "mongodb", path: "mongo.png" },
+  { name: "SQL", path: "sql.png" },
+  { name: "npm", path: "npm.png" },
+  { name: "git", path: "git.png" },
+  { name: "python", path: "python.png" },
+] as const;
+
+export const experitesFields = [
+  { title: "frontend development", whatToShow: frontEndImg },
+  { title: "backend development", whatToShow: backEndImg },
 ] as const;

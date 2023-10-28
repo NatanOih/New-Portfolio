@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import type { SectionName, mousePosType } from "./types";
 import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
-import { MotionValue, useTransform } from "framer-motion";
 
 export function useSectionInView(sectionName: SectionName, threshold = 0.75) {
   const { ref, inView } = useInView({
@@ -49,38 +48,12 @@ export function useIsTouchDevice() {
   return touchDevice;
 }
 
-export const useMousePoistion = (condition: boolean) => {
-  const [position, setMousePoistion] = useState<any>({});
-
-  useEffect(() => {
-    const mousemove = (e: MouseEvent) => {
-      setMousePoistion({ x: e.pageX, y: e.pageY });
-    };
-
-    if (condition) {
-      window.addEventListener("mousemove", mousemove);
-    }
-    return () => {
-      if (condition) {
-        window.removeEventListener("mousemove", mousemove);
-      }
-    };
-  }, [condition]);
-
-  return {
-    x: position.x,
-    y: position.y,
-  };
-};
-
-export function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [0, distance]);
-}
-
 export function useLocalMousePosition() {
   const [localMousePos, setLocalMousePos] = useState<mousePosType>({
     x: 0,
     y: 0,
+    pageY: 0,
+    pageX: 0,
   });
   const mousePosRef = useRef<any>(null);
 
@@ -90,7 +63,7 @@ export function useLocalMousePosition() {
     const localX = Math.round(e.clientX) - offsetLeft;
     const localY = Math.round(e.pageY) - offsetTop;
 
-    setLocalMousePos({ x: localX, y: localY });
+    setLocalMousePos({ x: localX, y: localY, pageY: e.pageY, pageX: e.pageX });
   };
 
   return { localMousePos, handleMouseMove, mousePosRef };

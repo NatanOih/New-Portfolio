@@ -4,7 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
-import clsx from "clsx";
+
+import { twMerge } from "tailwind-merge";
 import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
 
 export default function Header() {
@@ -29,12 +30,12 @@ export default function Header() {
               key={link.hash}
             >
               <Link
-                className={clsx(
-                  " flex w-full select-none  items-center justify-center p-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-200",
-                  {
-                    "text-gray-950 dark:text-gray-200":
-                      activeSection == link.name,
-                  }
+                className={twMerge(
+                  " flex w-full select-none items-center justify-center p-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-200",
+                  `${
+                    activeSection == link.name &&
+                    "dark:text-gray-300 text-gray-950"
+                  }`
                 )}
                 href={link.hash}
                 onClick={() => {

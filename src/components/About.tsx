@@ -20,7 +20,7 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <div className="py-2"></div>
-      <p className="">
+      {/* <p className="">
         After graduating with a degree in{" "}
         <span className="font-medium">Accounting</span>, I decided to pursue my
         passion for programming. I enrolled in a coding bootcamp and learned{" "}
@@ -45,7 +45,7 @@ export default function About() {
         learning about{" "}
         <span className="font-medium">history and philosophy</span>. I'm also
         learning how to play the guitar.
-      </p>
+      </p> */}
     </motion.section>
   );
 }

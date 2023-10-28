@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useScrollWithinBounds } from "@/lib/hooks";
 import LetterTextComponent from "./LetterTextComponent";
 
 type word = {
@@ -10,26 +9,23 @@ type word = {
   index: number;
   scrollY: number;
 };
-// ${initialLoad ? " transition-all" : ""}
-export default function WordTextComponent({ word, index, scrollY }: word) {
-  // const { scrollY, elementRef } = useScrollWithinBounds<HTMLDivElement>();
 
+export default function WordTextComponent({ word, index, scrollY }: word) {
   const [initialLoad, setInitialLoad] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setInitialLoad(true);
       console.log("finished");
-    }, 1500);
+    }, 1000);
   }, []);
 
   return (
     <motion.h1
-      // ref={elementRef}
       initial={
         !initialLoad
           ? {
               opacity: 0,
-              y: -100,
+              y: -300,
             }
           : {}
       }
@@ -39,25 +35,20 @@ export default function WordTextComponent({ word, index, scrollY }: word) {
               opacity: 1,
               y: 0,
             }
-          : { y: `${scrollY * 0.2 * (index * 0.3 + 1)}px` }
+          : { y: `${scrollY * 0.4 * (index * 0.3 + 1)}px` }
       }
       transition={
         !initialLoad
           ? {
               type: "spring",
-              damping: 12,
-              velocity: 12,
-              bounce: 1.95,
-              restSpeed: 0.7,
-              restDelta: 0.7,
-              duration: 0.15,
-              // mass: 2,
+              damping: 15,
+              velocity: 10,
+              bounce: 4.95,
               stiffness: 300,
-              delay: 0.3 + index * 0.02,
+              delay: 0.5 + index * 0.03,
             }
           : {
-              ease: "easeOut",
-              duration: 1,
+              type: "spring",
             }
       }
       className={` flex flex-row pr-[5vw]  justify-center w-[80%] ${
@@ -72,14 +63,6 @@ export default function WordTextComponent({ word, index, scrollY }: word) {
        
         `}
       key={word}
-      // style={
-      //   initialLoad
-      //     ? {
-      //         translateY: `${scrollY * 0.4 * (index * 0.3 + 1)}px`,
-      //         transition: "all 1s ease-out",
-      //       }
-      //     : {}
-      // }
     >
       {word == "gap" ? (
         <div className="py-6" />
