@@ -15,7 +15,6 @@ export default function WordTextComponent({ word, index, scrollY }: word) {
   useEffect(() => {
     setTimeout(() => {
       setInitialLoad(true);
-      console.log("finished");
     }, 1000);
   }, []);
 

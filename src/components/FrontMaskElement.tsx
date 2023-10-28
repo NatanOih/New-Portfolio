@@ -25,12 +25,12 @@ export default function FrontMaskElement({
   };
 
   const handleTransition = () => {
-    !isHidden ? setTransition("clip-path 0.3s") : setTransition("clip-path 1s");
+    !isHidden ? setTransition("clip-path 0.5s") : setTransition("clip-path 1s");
     setisHidden(!isHidden);
     !isHidden &&
       setTimeout(() => {
         setTransition("opacity 1s cubic-bezier(0.77, 0, 0.175, 1)");
-      }, 100);
+      }, 300);
   };
 
   return (
@@ -38,7 +38,7 @@ export default function FrontMaskElement({
       <article
         id="HIDDEN"
         style={isHidden ? mask : mask2}
-        className=" absolute flex flex-col items-center gap-4 justify-start p-6 top-0 z-2 w-full h-[40rem] bg-zinc-200/80"
+        className=" absolute flex flex-col items-center gap-4 justify-start p-6 top-0 z-2 w-full h-[40rem]  rounded-lg border-black border-2 bg-zinc-200/80"
       >
         <div className="flex justify-center">
           <h3 className=" font-playfair  w-fit  font-semibold text-center text-8xl p-1 text-black h-fit bg-white/80 rounded-lg ">
