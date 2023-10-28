@@ -57,9 +57,7 @@ export default function SkillsContent({ isHidden }: skillsContentType) {
                       setShowSkills(true);
                     }, 200);
                   }}
-                  className={`${
-                    isHidden ? "cursor-none" : "cursor-pointer"
-                  } md:w-[200px] z-100  w-[150px] h-[150px]`}
+                  className="cursor-pointer md:w-[200px] hover:!-translate-y-3 hover:!transition-all hover:!hue-rotate-90  w-[150px] h-[150px]"
                   alt="ascasc"
                   src={`/img/${field.title}.png`}
                 />

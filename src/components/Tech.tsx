@@ -31,7 +31,7 @@ export const Tech = ({ title, techList, isHidden, ShowSkills }: TechProps) => {
         stiffness: 300,
         ease: "easeInOut",
       }}
-      className="bg-red-300/40 rounded-xl h-fit w-fit flex flex-col p-4 justify-center items-center gap-10 overflow-hidden "
+      className="bg-purple-300/20 rounded-xl h-fit w-fit flex flex-col p-5 justify-center items-center gap-10 shadow-xl overflow-hidden "
     >
       <motion.div
         initial={{ x: -250, opacity: 0 }}
@@ -43,7 +43,7 @@ export const Tech = ({ title, techList, isHidden, ShowSkills }: TechProps) => {
           delay: 0.2,
           ease: "easeInOut",
         }}
-        className="max-w-[450px] max-h-[450px] border-8 bg-purple-300 border-black/90"
+        className="max-w-[450px] max-h-[450px] border-8 bg-purple-800/40 border-black/90"
       >
         <motion.h3
           initial={{ x: -250, opacity: 0 }}
@@ -55,13 +55,13 @@ export const Tech = ({ title, techList, isHidden, ShowSkills }: TechProps) => {
             delay: 0.6,
             ease: "easeInOut",
           }}
-          className=" text-center text-6xl "
+          className=" text-center text-black font-semibold text-6xl "
         >
           {title}
         </motion.h3>
       </motion.div>
 
-      <div className="flex justify-center flex-wrap gap-8  ">
+      <div className="flex justify-center flex-wrap gap-5 ">
         {techList.map((skill, id) => {
           return (
             <motion.img
@@ -75,7 +75,7 @@ export const Tech = ({ title, techList, isHidden, ShowSkills }: TechProps) => {
               }}
               key={id}
               style={{ filter: "grayscale(20%)" }}
-              className="align-middle max-w-[90px] h-[60px] border-2  p-2 bg-neutral-200/50 cursor-pointer border-black hover:!bg-slate-300/30 hover:!scale-110 hover:!transition-all"
+              className="align-middle max-w-[90px] h-[60px] border-2  p-2 bg-neutral-200/50 cursor-pointer border-black hover:!bg-slate-300/30 hover:!scale-150 hover:!transition-all"
               alt={skill.path}
               src={`./img/${skill.path}`}
             />
