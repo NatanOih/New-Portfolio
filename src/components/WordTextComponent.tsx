@@ -12,10 +12,11 @@ type word = {
 
 export default function WordTextComponent({ word, index, scrollY }: word) {
   const [initialLoad, setInitialLoad] = useState(false);
+
   useEffect(() => {
     setTimeout(() => {
       setInitialLoad(true);
-    }, 1000);
+    }, 700);
   }, []);
 
   return (
@@ -44,7 +45,7 @@ export default function WordTextComponent({ word, index, scrollY }: word) {
               velocity: 10,
               bounce: 4.95,
               stiffness: 300,
-              delay: 0.5 + index * 0.03,
+              delay: 0.2 + index * 0.02,
             }
           : {
               type: "spring",

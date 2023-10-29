@@ -1,18 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const staggerLetters = {
-  initial: {
-    y: -100,
-  },
-  animate: (index: number) => ({
-    y: 0,
-    transition: {
-      delay: 0.01 * index,
-      duration: 0.1,
-    },
-  }),
-};
+// const staggerLetters = {
+//   initial: {
+//     y: -100,
+//   },
+//   animate: (index: number) => ({
+//     y: 0,
+//     transition: {
+//       delay: 0.01 * index,
+//       duration: 0.1,
+//     },
+//   }),
+// };
 
 export default function LetterTextComponent({
   children,
