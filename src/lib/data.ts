@@ -155,6 +155,6 @@ export const backEndImg = [
 ] as const;
 
 export const experitesFields = [
-  { title: "Frontend Development", whatToShow: frontEndImg },
-  { title: "Backend Development", whatToShow: backEndImg },
+  { title: "Frontend_Development", whatToShow: frontEndImg },
+  { title: "Backend_Development", whatToShow: backEndImg },
 ] as const;

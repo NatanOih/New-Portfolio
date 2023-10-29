@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { experitesFields } from "@/lib/data";
+import Image from "next/image";
 
 type techListObject = {
   path: string;
@@ -31,7 +32,7 @@ export const Tech = ({ title, techList, isHidden, ShowSkills }: TechProps) => {
         stiffness: 300,
         ease: "easeInOut",
       }}
-      className="bg-purple-300/20 rounded-xl h-fit w-fit flex flex-col p-5 justify-center items-center gap-10 shadow-xl overflow-hidden "
+      className="bg-purple-300/20 rounded-xl border-2 border-black/40 h-fit w-fit flex flex-col p-5 justify-center items-center gap-10 shadow-xl overflow-hidden "
     >
       <motion.div
         initial={{ x: -250, opacity: 0 }}
@@ -57,14 +58,14 @@ export const Tech = ({ title, techList, isHidden, ShowSkills }: TechProps) => {
           }}
           className=" text-center text-black font-semibold text-6xl "
         >
-          {title}
+          {title.replace("_", " ")}
         </motion.h3>
       </motion.div>
 
       <div className="flex justify-center flex-wrap gap-5 ">
         {techList.map((skill, id) => {
           return (
-            <motion.img
+            <motion.div
               initial={{ scale: 0, opacity: 0 }}
               animate={skillsControls}
               transition={{
@@ -75,10 +76,17 @@ export const Tech = ({ title, techList, isHidden, ShowSkills }: TechProps) => {
               }}
               key={id}
               style={{ filter: "grayscale(20%)" }}
-              className="align-middle max-w-[90px] h-[60px] border-2  p-2 bg-neutral-200/50 cursor-pointer border-black hover:!bg-slate-300/30 hover:!scale-150 hover:!transition-all"
-              alt={skill.path}
-              src={`./img/${skill.path}`}
-            />
+              className="justify-center flex items-center p-1 border-2 bg-white cursor-pointer border-black hover:!bg-white/50 hover:!scale-125 hover:!transition-all"
+            >
+              <Image
+                alt={skill.path}
+                width={50}
+                height={50}
+                style={{ objectFit: "cover" }}
+                src={"/img/" + skill.path}
+                loading="lazy"
+              />
+            </motion.div>
           );
         })}
       </div>

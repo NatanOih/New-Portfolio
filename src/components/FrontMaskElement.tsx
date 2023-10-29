@@ -25,12 +25,14 @@ export default function FrontMaskElement({
   };
 
   const handleTransition = () => {
-    !isHidden ? setTransition("clip-path 0.5s") : setTransition("clip-path 1s");
+    !isHidden
+      ? setTransition("clip-path 0.25s")
+      : setTransition("clip-path 1s");
     setisHidden(!isHidden);
     !isHidden &&
       setTimeout(() => {
         setTransition("opacity 1s cubic-bezier(0.77, 0, 0.175, 1)");
-      }, 300);
+      }, 250);
   };
 
   return (

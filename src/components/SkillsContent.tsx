@@ -2,6 +2,7 @@ import { experitesFields } from "@/lib/data";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { Tech } from "./Tech";
+import Image from "next/image";
 
 type skillsContentType = {
   isHidden: boolean;
@@ -24,13 +25,13 @@ export default function SkillsContent({ isHidden }: skillsContentType) {
   return (
     <>
       <div
-        className={`flex relative w-fit flex-row py-4 justify-center gap-10`}
+        className={`flex relative w-fit items-center flex-row py-4 justify-center gap-10`}
       >
         <AnimatePresence initial={false}>
           {!isHidden &&
             experitesFields.map((field, index) => {
               return (
-                <motion.img
+                <motion.div
                   key={index}
                   initial={{ y: -100, opacity: 0 }}
                   animate={{
@@ -57,10 +58,17 @@ export default function SkillsContent({ isHidden }: skillsContentType) {
                       setShowSkills(true);
                     }, 200);
                   }}
-                  className="cursor-pointer md:w-[200px] hover:!-translate-y-3 hover:!transition-all hover:!hue-rotate-90  w-[150px] h-[150px]"
-                  alt="ascasc"
-                  src={`/img/${field.title}.png`}
-                />
+                  className="cursor-pointer  hover:!-translate-y-3 hover:!transition-all hover:!hue-rotate-90  "
+                >
+                  <Image
+                    alt="ascasc"
+                    loading="lazy"
+                    height={150}
+                    width={200}
+                    style={{ objectFit: "cover" }}
+                    src={`/img/${field.title}.png`}
+                  />
+                </motion.div>
               );
             })}
         </AnimatePresence>
