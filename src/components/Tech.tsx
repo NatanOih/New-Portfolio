@@ -84,7 +84,7 @@ export const Tech = ({ title, techList, isHidden, ShowSkills }: TechProps) => {
                 height={50}
                 style={{ objectFit: "cover" }}
                 src={"/img/" + skill.path}
-                loading="lazy"
+                loading="eager"
               />
             </motion.div>
           );

@@ -4,13 +4,31 @@ import React from "react";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
-
+import { useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
+import { useLoading } from "@/context/LoadingContext";
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
+
+  const { loading, setLoading } = useLoading();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, [setLoading]);
+
+  if (loading) {
+    return (
+      <div className="bg-black fixed top-0 left-0 w-full h-full">
+        <div className="absolute top-[50vh] left-[50vw] rounded-full w-10 h-10  border-t-4 border-slate-600 animate-spin"></div>
+      </div>
+    );
+  }
+
   return (
     <header className="z-50 relative">
       <motion.div

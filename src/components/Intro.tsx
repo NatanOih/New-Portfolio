@@ -13,6 +13,7 @@ import {
 } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
 import WordTextComponent from "./WordTextComponent";
+import { useLoading } from "@/context/LoadingContext";
 
 const introText = [
   "fullstack",
@@ -23,34 +24,28 @@ const introText = [
   'it is a habbit."',
 ];
 export default function Intro() {
-  const [loading, setLoading] = useState<boolean>(true);
+  // const { loading, setLoading } = useLoading();
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const isTouch = useIsTouchDevice();
   const { scrollY, elementRef } = useScrollWithinBounds<HTMLDivElement>();
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 500);
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="h-[150vh] fixed pb-[50vh] z-100 top-0 w-full bg-slate-400 flex justify-center items-center">
-        <motion.div className="rounded-full w-10 h-10 bg-black border-t-4 border-slate-600 animate-spin">
-          {" "}
-        </motion.div>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="h-[150vh] pb-[50vh] z-100 top-0 w-full bg-slate-400 ">
+  //       <motion.div className="absolute top-[50vh] left-[50vw] rounded-full w-10 h-10 bg-black border-t-4 border-slate-600 animate-spin">
+  //         {" "}
+  //       </motion.div>
+  //     </div>
+  //   );
+  // }
   return (
     <section
       ref={ref}
       id="home"
       className=" relative h-[100vh] w-full  flex flex-col gap-4 p-2 justify-center  items-center"
     >
-      {loading ? (
+      {false ? (
         <div className="h-[150vh] fixed pb-[50vh] z-100 top-0 w-full bg-slate-400 flex justify-center items-start">
           <motion.div className="rounded-full w-10 h-10 bg-black border-t-4 border-slate-600 animate-spin mb-96">
             {" "}
