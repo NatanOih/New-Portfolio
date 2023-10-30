@@ -1,16 +1,22 @@
 import React from "react";
-import { twMerge } from "tailwind-merge";
+
 type CardProps = {
-  gradient: string;
-  children: React.ReactNode;
+  gradient: any;
 };
 
-export default function ProjectCard({ gradient, children }: CardProps) {
+export default function ProjectCard({ gradient }: CardProps) {
+  const data = {
+    dick1: "bg-black",
+    dick2: "bg-white/50",
+    dick3: "bg-blue-500",
+    dick4: "bg-red-500",
+  } as any;
+
   return (
     <article
-      className={`bg-gradient-to-br ${gradient} h-[90%] w-[90%] border-2 rounded-2xl border-black flex justify-center items-center`}
+      className={` ${data[gradient]}  h-[90%] w-[90%] border-2 rounded-2xl border-black flex justify-center items-center`}
     >
-      {children}
+      {gradient}
     </article>
   );
 }

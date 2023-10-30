@@ -16,7 +16,7 @@ export default function Projects() {
     <section
       ref={ref}
       id="projects"
-      className="scroll-mt-28 max-w-6xl px-4 w-full  h-[300vh] scroll-smooth  "
+      className="scroll-mt-28 max-w-6xl px-4 w-full  h-[fit] scroll-smooth  "
     >
       <SectionHeading>My Projects </SectionHeading>
       <div className="flex  w-full h-full items-start gap-20 ">
@@ -32,7 +32,7 @@ export default function Projects() {
 
         <div className="sticky top-0 flex h-screen w-full items-center ">
           <div className="bg-gray-700/80 flex justify-center items-center rounded-2xl w-full aspect-square">
-            <ProjectCard gradient={""}> {currentProject} </ProjectCard>
+            <ProjectCard gradient={currentProject} />
           </div>
         </div>
       </div>
