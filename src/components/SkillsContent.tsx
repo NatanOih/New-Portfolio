@@ -25,7 +25,7 @@ export default function SkillsContent({ isHidden }: skillsContentType) {
   return (
     <>
       <div
-        className={`flex relative w-fit items-center flex-row py-4 justify-center gap-10`}
+        className={`flex relative items-center flex-row py-4 justify-center gap-10`}
       >
         <AnimatePresence initial={false}>
           {!isHidden &&
@@ -58,14 +58,14 @@ export default function SkillsContent({ isHidden }: skillsContentType) {
                       setShowSkills(true);
                     }, 200);
                   }}
-                  className="cursor-pointer  hover:!-translate-y-3 hover:!transition-all hover:!hue-rotate-90  "
+                  className="cursor-pointer p-2 hover:!-translate-y-3 hover:!transition-all hover:!hue-rotate-90"
                 >
                   <Image
                     alt="ascasc"
                     loading="lazy"
                     height={150}
-                    width={200}
-                    style={{ objectFit: "cover" }}
+                    width={150}
+                    style={{ objectFit: "scale-down" }}
                     src={`/img/${field.title}.png`}
                   />
                 </motion.div>

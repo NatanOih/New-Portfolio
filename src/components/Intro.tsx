@@ -34,7 +34,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className=" relative h-[100vh] w-full  flex flex-col gap-4 p-2 justify-center  items-center"
+      className="overflow-hidden relative h-[100vh] w-full  flex flex-col gap-4 p-2 justify-center  items-center"
     >
       <>
         <motion.div

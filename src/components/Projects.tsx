@@ -1,23 +1,42 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import SectionHeading from "./SectionHeading";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { useSectionInView } from "@/lib/hooks";
+import ProjectTitle from "./ProjectTitle";
+import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.2);
+  const [currentProject, setCurrentProject] = useState("nothing");
+
   return (
-    <section ref={ref} id="projects" className="scroll-mt-28">
+    <section
+      ref={ref}
+      id="projects"
+      className="scroll-mt-28 max-w-6xl px-4 w-full  h-[300vh] scroll-smooth  "
+    >
       <SectionHeading>My Projects </SectionHeading>
-      <div>
-        {projectsData.map((project, index) => (
-          <React.Fragment key={index}>
-            <Project {...project} />
-          </React.Fragment>
-        ))}
+      <div className="flex  w-full h-full items-start gap-20 ">
+        <ul className="w-full h-full flex flex-col gap-20 py-[50vh]">
+          {["dick1", "dick2", "dick3", "dick4"].map((project, index) => (
+            <li key={index}>
+              <ProjectTitle setCurrentProject={setCurrentProject}>
+                {project}
+              </ProjectTitle>
+            </li>
+          ))}
+        </ul>
+
+        <div className="sticky top-0 flex h-screen w-full items-center ">
+          <div className="bg-gray-700/80 flex justify-center items-center rounded-2xl w-full aspect-square">
+            <ProjectCard gradient={""}> {currentProject} </ProjectCard>
+          </div>
+        </div>
       </div>
+      <div className="h-[30vh]">g</div>
     </section>
   );
 }

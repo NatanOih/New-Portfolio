@@ -23,7 +23,7 @@ export default function Contact() {
       transition={{
         duration: 0.6,
       }}
-      className="px-4 py-10 sm:py-16 w-[min(100%,38rem)] "
+      className="px-4 py-10 overflow-hidden sm:py-16 w-[min(100%,38rem)] "
     >
       <SectionHeading>Contact Me</SectionHeading>
 

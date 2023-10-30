@@ -6,11 +6,10 @@ import ProgressBar from "@/components/ProgressBar";
 import Projects from "@/components/Projects";
 import SectionDevider from "@/components/SectionDevider";
 import Skills from "@/components/Skills";
-import { Suspense } from "react";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-6 items-center px-4 overflow-hidden">
+    <main className="flex flex-col gap-6 items-center px-4 ">
       <Intro />
       <div className="py-2" />
       <SectionDevider />
@@ -22,7 +21,7 @@ export default function Home() {
       <div className="py-2" />
       <SectionDevider />
       <div className="py-2" />
-      {/* <Projects /> */}
+      <Projects />
       <div className="py-2" />
       <Experience />
       <div className="py-2" />
