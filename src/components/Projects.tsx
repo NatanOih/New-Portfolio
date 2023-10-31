@@ -2,11 +2,14 @@
 
 import React, { useState } from "react";
 import SectionHeading from "./SectionHeading";
-import { projectsData } from "@/lib/data";
-import Image from "next/image";
+import { projectData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import ProjectTitle from "./ProjectTitle";
 import ProjectCard from "./ProjectCard";
+
+type projectObject = {
+  title: string;
+};
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.2);
@@ -16,44 +19,25 @@ export default function Projects() {
     <section
       ref={ref}
       id="projects"
-      className="scroll-mt-28 max-w-6xl px-4 w-full  h-[fit] scroll-smooth  "
+      className="scroll-mt-28 px-4 w-full h-[fit] scroll-smooth  "
     >
       <SectionHeading>My Projects </SectionHeading>
-      <div className="flex  w-full h-full items-start gap-20 ">
-        <ul className="w-full h-full flex flex-col gap-20 py-[50vh]">
-          {["dick1", "dick2", "dick3", "dick4"].map((project, index) => (
+      <div className="flex w-full h-full items-start gap-14 ">
+        <ul className="w-full h-full text-center flex flex-col gap-14 py-[50vh]">
+          {projectData.map((project: projectObject, index: number) => (
             <li key={index}>
               <ProjectTitle setCurrentProject={setCurrentProject}>
-                {project}
+                {project.title}
               </ProjectTitle>
             </li>
           ))}
         </ul>
 
         <div className="sticky top-0 flex h-screen w-full items-center ">
-          <div className="bg-gray-700/80 flex justify-center items-center rounded-2xl w-full aspect-square">
-            <ProjectCard gradient={currentProject} />
-          </div>
+          <ProjectCard currentProject={currentProject} />
         </div>
       </div>
       <div className="h-[30vh]">g</div>
     </section>
-  );
-}
-
-type ProjectProps = (typeof projectsData)[number];
-
-function Project({ title, description, tags, imageUrl }: ProjectProps) {
-  return (
-    <article>
-      <h3> {title}</h3>
-      <p> {description}</p>
-      <ul>
-        {tags.map((tag, index) => (
-          <li key={index}> {tag}</li>
-        ))}
-      </ul>
-      <Image src={imageUrl} alt={title} width={300} quality={95} />
-    </article>
   );
 }

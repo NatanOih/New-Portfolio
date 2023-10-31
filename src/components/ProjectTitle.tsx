@@ -24,7 +24,7 @@ export default function ProjectTitle({
     <p
       ref={ref}
       className={twMerge(
-        "py-24 font-mono text-5xl text-gray-300",
+        "py-24 font-mono select-none text-5xl text-gray-300",
         isInView && "text-black"
       )}
     >

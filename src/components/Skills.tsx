@@ -1,12 +1,10 @@
 "use client";
 import { useLocalMousePosition, useSectionInView } from "@/lib/hooks";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+
 import { twMerge } from "tailwind-merge";
 import BehindMaskElement from "./BehindMaskElement";
 import FrontMaskElement from "./FrontMaskElement";
-
-//{ children }: { children: React.ReactNode }
 
 export default function Skills() {
   const { ref } = useSectionInView("Skills", 0.5);

@@ -76,14 +76,14 @@ export default function Intro() {
               setActiveSection("Contact");
               setTimeOfLastClick(Date.now());
             }}
-            className="bg-gray-900 group dark:bg-white/20 dark:text-white/60 dark:hover:border-black/50 shadow-2xl flex hover:scale-105 gap-2 items-center justify-center rounded-full text-white px-7 border-black border-2 transition active:scale-95 py-3"
+            className="bg-gray-900 group dark:bg-white/20 dark:text-white/60 dark:hover:border-black/50  flex hover:scale-105 gap-2 items-center justify-center rounded-full text-white px-7 border-black border-2 transition active:scale-95 py-3"
             href="#contact"
           >
             Contact me here{" "}
             <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
           </Link>
           <a
-            className="bg-white cursor-pointer shadow-2xl  flex hover:scale-105
+            className="bg-white cursor-pointer   flex hover:scale-105
           transition active:scale-95  dark:bg-white/10 dark:hover:border-white/50 dark:border-gray-800/40 dark:text-white/60 gap-2 items-center justify-center rounded-full outline-none  text-gray-950 px-7 py-3 border-black/70 border-2"
             href="/_Natan Oihman CV.pdf"
             target="_blank"
@@ -93,7 +93,7 @@ export default function Intro() {
             <HiDownload className="opacity-70 group-hover:translate-x-1 transition" />
           </a>
           <a
-            className="bg-white cursor-pointer shadow-2xl border-black/70 border-2 hover:scale-110
+            className="bg-white cursor-pointer  border-black/70 border-2 hover:scale-110
           transition active:scale-95 flex gap-2 items-center dark:hover:border-white/50 dark:border-gray-800/40 dark:bg-white/10 dark:text-white/60 justify-center rounded-full text-[1.35rem] text-gray-700 p-4"
             href="https://www.linkedin.com/in/natan-oihman-32373123a/"
             target="_blank"
@@ -101,8 +101,8 @@ export default function Intro() {
             <BsLinkedin />
           </a>
           <a
-            className="bg-white cursor-pointer shadow-2xl border-black/70 border-2 hover:scale-110
-          transition active:scale-95 flex gap-2 items-center dark:hover:border-white/50 dark:border-gray-800/40 dark:bg-white/10 dark:text-white/60 justify-center rounded-full text-[1.35rem] text-gray-700 p-4"
+            className="bg-white cursor-pointer border-black/70 border-2 hover:scale-110
+          transition active:scale-95 flex gap-2 items-center dark:hover:border-white/50  dark:border-gray-800/40 dark:bg-white/10 dark:text-white/60 justify-center rounded-full text-[1.35rem] text-gray-700 p-4"
             href="https://github.com/NatanOih"
             target="_blank"
           >

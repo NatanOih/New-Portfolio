@@ -82,29 +82,38 @@ export const experiencesData = [
   },
 ] as const;
 
-export const projectsData = [
+export const projectData = [
   {
-    title: "CorpComment",
+    src: sudokuIMG,
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: sudokuIMG,
+      "A sudoku App featuring animations, server actions, unique design and state managment.",
+
+    title: "Sudoko App",
+    category: "React Next.js Jotai Tailwind",
+    link: "https://suduko-next-js.vercel.app/",
+    gitLink: "https://github.com/NatanOih/suduko-nextJS",
   },
   {
-    title: "rmtDev",
+    src: sudokuIMG,
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: sudokuIMG,
+      "A sudoku App featuring animations, server actions, unique design and state managment.",
+
+    title: "Sudoko App 2",
+    category: "React Next.js Jotai Tailwind",
+    link: "https://suduko-next-js.vercel.app/",
+    gitLink: "https://github.com/NatanOih/suduko-nextJS",
   },
   {
-    title: "Word Analytics",
+    src: sudokuIMG,
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: sudokuIMG,
+      "A sudoku App featuring animations, server actions, unique design and state managment.",
+
+    title: "Sudoko App 3",
+    category: "React Next.js Jotai Tailwind",
+    link: "https://suduko-next-js.vercel.app/",
+    gitLink: "https://github.com/NatanOih/suduko-nextJS",
   },
-] as const;
+] as any;
 
 export const skillsData = [
   "HTML",
