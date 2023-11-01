@@ -89,7 +89,7 @@ export const projectData = [
       "A sudoku App featuring animations, server actions, unique design and state managment.",
 
     title: "Sudoko App",
-    category: "React Next.js Jotai Tailwind",
+    category: "React, Next.js, Jotai, Tailwind",
     link: "https://suduko-next-js.vercel.app/",
     gitLink: "https://github.com/NatanOih/suduko-nextJS",
   },

@@ -27,11 +27,16 @@ export default function ProjectTitle({
     <p
       ref={ref}
       className={twMerge(
-        "py-24 font-mono select-none text-5xl text-gray-300",
-        isInView && "text-black"
+        "py-24 font-mono select-none text-5xl text-black/80  rounded-sm",
+        isInView &&
+          " text-gray-200 underline font-bold bg-gray-500/20 transition-all"
       )}
     >
       {children}
+      <p className="text-start no-underline text-2xl px-5 ">
+        {" "}
+        {project?.description}{" "}
+      </p>
     </p>
   );
 }

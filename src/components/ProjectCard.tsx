@@ -38,17 +38,21 @@ export default function ProjectCard({ currentProject }: any) {
             !animationTrigger
               ? "opacity-0 -translate-x-10"
               : "opacity-100 translate-x-0"
-          } rounded-lg transition-all right-0 z-0 overflow-hidden sepia grayscale brightness-80 -bottom-20`}
+          } rounded-lg transition-all right-0 z-0 overflow-hidden sepia grayscale brightness-60 hello -bottom-20`}
           width={280}
           height={250}
           alt="saf"
           src={currentProject?.src}
         />
         <div className="absolute bottom-[18%] text-[#dbd8d6] stroke-black stroke-2">
-          <h1 className="leading-[6vw] font-[600] py-8 underline text-[6vw]">
+          <h1
+            className={`leading-[6vw] ${
+              !animationTrigger ? "opacity-0 mb-10" : "opacity-100 mb-0"
+            } font-[600] py-8 transition-all duration-100 underline text-[6vw]`}
+          >
             {currentProject?.title}
           </h1>
-          <h2 className=" relative leading-[6vw] w-fit h-fit font-[400] antialiased stroke-2 px-3  rounded-md stroke-black text-[6vw] bg-white/10 text-center  hover:bg-black hover:bg-opacity-20 ease-in-out transform duration-100 active:scale-90 hover:text-white ">
+          <h2 className=" relative leading-[6vw] w-fit h-fit font-[400] antialiased stroke-2 px-3  rounded-md stroke-black text-[6vw] bg-white/10 text-center  hover:bg-black/20 transition-all active:scale-90 hover:text-white ">
             <a
               target="_blank"
               href={currentProject?.link}
@@ -57,7 +61,7 @@ export default function ProjectCard({ currentProject }: any) {
               Live Site
             </a>
           </h2>
-          <p className="antialiased mt-[2vh] z-1 relative leading-[24px] font-[400] text-[24px]">
+          <p className="antialiased mt-[2vh] bg-white/10 transition-all active:scale-90  hover:text-white hover:bg-black/20  p-2 rounded-sm w-fit z-1 relative leading-[24px] font-[400] text-[24px]">
             <a
               href={currentProject?.gitLink}
               target="_blank"
