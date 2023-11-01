@@ -7,39 +7,48 @@ import { useSectionInView } from "@/lib/hooks";
 import ProjectTitle from "./ProjectTitle";
 import ProjectCard from "./ProjectCard";
 import { projectObject } from "@/lib/types";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.2);
-  const [currentProject, setCurrentProject] = useState<projectObject | null>(
-    null
-  );
+  const [currentProject, setCurrentProject] = useState<any>(null);
 
   return (
     <section
       ref={ref}
       id="projects"
-      className="scroll-mt-28 px-4 w-full h-[fit] scroll-smooth  "
+      className="scroll-mt-14 px-4 w-full h-[fit] scroll-smooth  "
     >
       <SectionHeading>My Projects </SectionHeading>
       <div className="flex w-full h-full items-start gap-14 ">
-        <ul className="w-full h-full text-center flex flex-col gap-14 py-[50vh]">
+        <motion.ul
+          initial={{ opacity: 0, x: 200 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ type: "spring", delay: 1 }}
+          className="w-full h-full text-center flex flex-col gap-14 py-[40vh]"
+        >
           {projectData.map((project: projectObject, index: number) => (
             <li key={index}>
               <ProjectTitle
+                currentProject={currentProject}
                 project={project}
                 setCurrentProject={setCurrentProject}
-              >
-                {project.title}
-              </ProjectTitle>
+              />
             </li>
           ))}
-        </ul>
+        </motion.ul>
 
-        <div className="sticky top-0 flex h-screen w-full items-center ">
-          <ProjectCard currentProject={currentProject} />
-        </div>
+        {currentProject && (
+          <motion.div
+            initial={{ opacity: 0, x: 200 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ type: "spring" }}
+            className="sticky top-0 flex h-screen w-full items-center "
+          >
+            <ProjectCard currentProject={currentProject} />
+          </motion.div>
+        )}
       </div>
-      <div className="h-[30vh]">g</div>
     </section>
   );
 }

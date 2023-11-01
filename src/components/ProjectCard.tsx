@@ -38,9 +38,9 @@ export default function ProjectCard({ currentProject }: any) {
             !animationTrigger
               ? "opacity-0 -translate-x-10"
               : "opacity-100 translate-x-0"
-          } rounded-lg transition-all right-0 z-0 overflow-hidden sepia grayscale brightness-60 hello -bottom-20`}
+          } rounded-lg transition-all h-auto right-0 z-0 overflow-hidden sepia grayscale brightness-60 hello -bottom-20`}
           width={280}
-          height={250}
+          height={"280"}
           alt="saf"
           src={currentProject?.src}
         />

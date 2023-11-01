@@ -17,7 +17,7 @@ export default function Skills() {
       ref={ref}
       id="skills"
       className={twMerge(
-        "w-full flex justify-center select-none  items-center",
+        "w-full flex justify-center select-none scroll-mt-28  items-center",
         `${isHidden && "cursor-none"}`
       )}
     >

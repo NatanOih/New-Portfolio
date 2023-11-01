@@ -87,7 +87,6 @@ export const projectData = [
     src: sudokuIMG,
     description:
       "A sudoku App featuring animations, server actions, unique design and state managment.",
-
     title: "Sudoko App",
     category: "React, Next.js, Jotai, Tailwind",
     link: "https://suduko-next-js.vercel.app/",
@@ -97,7 +96,6 @@ export const projectData = [
     src: sudokuIMG,
     description:
       "A sudoku App featuring animations, server actions, unique design and state managment.",
-
     title: "Sudoko App 2",
     category: "React Next.js Jotai Tailwind",
     link: "https://suduko-next-js.vercel.app/",
@@ -107,7 +105,6 @@ export const projectData = [
     src: sudokuIMG,
     description:
       "A sudoku App featuring animations, server actions, unique design and state managment.",
-
     title: "Sudoko App 3",
     category: "React Next.js Jotai Tailwind",
     link: "https://suduko-next-js.vercel.app/",

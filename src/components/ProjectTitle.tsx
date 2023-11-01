@@ -2,16 +2,17 @@ import React, { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { projectObject } from "@/lib/types";
+import { setTimeout } from "timers/promises";
 
 type ProjectTitleType = {
-  children: React.ReactNode;
   setCurrentProject: (c: any) => void | any;
+  currentProject: projectObject;
   project: projectObject;
 };
 
 export default function ProjectTitle({
   project,
-  children,
+  currentProject,
   setCurrentProject,
 }: ProjectTitleType) {
   const ref = useRef(null);
@@ -27,16 +28,19 @@ export default function ProjectTitle({
     <p
       ref={ref}
       className={twMerge(
-        "py-24 font-mono select-none text-5xl text-black/80  rounded-sm",
+        "py-24 font-mono select-none flex flex-col gap-6 text-5xl text-black/80 rounded-sm",
         isInView &&
-          " text-gray-200 underline font-bold bg-gray-500/20 transition-all"
+          " text-gray-200  font-bold bg-gray-500/20 transition-all !duration-1000"
       )}
     >
-      {children}
-      <p className="text-start no-underline text-2xl px-5 ">
-        {" "}
-        {project?.description}{" "}
-      </p>
+      {currentProject && (
+        <>
+          <span className="underline"> {project.title} </span>
+          <span className="text-start text-2xl px-20  ">
+            {project.description}
+          </span>
+        </>
+      )}
     </p>
   );
 }
