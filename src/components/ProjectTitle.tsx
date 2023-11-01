@@ -1,13 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 import { twMerge } from "tailwind-merge";
+import { projectObject } from "@/lib/types";
 
 type ProjectTitleType = {
   children: React.ReactNode;
   setCurrentProject: (c: any) => void | any;
+  project: projectObject;
 };
 
 export default function ProjectTitle({
+  project,
   children,
   setCurrentProject,
 }: ProjectTitleType) {
@@ -16,9 +19,9 @@ export default function ProjectTitle({
 
   useEffect(() => {
     if (isInView) {
-      setCurrentProject(children);
+      setCurrentProject(project);
     }
-  }, [isInView, setCurrentProject, children]);
+  }, [isInView, setCurrentProject, project]);
 
   return (
     <p

@@ -23,3 +23,12 @@ export type FromtProps = {
 export type hiddenProps = {
   isHidden: boolean;
 };
+
+export type projectObject = {
+  src: string;
+  description: string;
+  title: string;
+  category: string;
+  link: string;
+  gitLink: string;
+};

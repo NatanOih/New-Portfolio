@@ -6,14 +6,13 @@ import { projectData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import ProjectTitle from "./ProjectTitle";
 import ProjectCard from "./ProjectCard";
-
-type projectObject = {
-  title: string;
-};
+import { projectObject } from "@/lib/types";
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.2);
-  const [currentProject, setCurrentProject] = useState("nothing");
+  const [currentProject, setCurrentProject] = useState<projectObject | null>(
+    null
+  );
 
   return (
     <section
@@ -26,7 +25,10 @@ export default function Projects() {
         <ul className="w-full h-full text-center flex flex-col gap-14 py-[50vh]">
           {projectData.map((project: projectObject, index: number) => (
             <li key={index}>
-              <ProjectTitle setCurrentProject={setCurrentProject}>
+              <ProjectTitle
+                project={project}
+                setCurrentProject={setCurrentProject}
+              >
                 {project.title}
               </ProjectTitle>
             </li>

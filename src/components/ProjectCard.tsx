@@ -2,24 +2,21 @@ import React, { useEffect, useState } from "react";
 
 import { projectData } from "@/lib/data";
 import Image from "next/image";
-import sudokuIMG from "/public/sudokuIMG.png";
+// import sudokuIMG from "/public/sudokuIMG.png";
+import { projectObject } from "@/lib/types";
 
-type CardProps = {
-  currentProject: any;
-};
+// export const image = {
+//   src: sudokuIMG,
+//   description:
+//     "A sudoku App featuring animations, server actions, unique design and state managment.",
 
-export const image = {
-  src: sudokuIMG,
-  description:
-    "A sudoku App featuring animations, server actions, unique design and state managment.",
+//   title: "Sudoko App",
+//   category: "React Next.js Jotai Tailwind",
+//   link: "https://suduko-next-js.vercel.app/",
+//   gitLink: "https://github.com/NatanOih/suduko-nextJS",
+// };
 
-  title: "Sudoko App",
-  category: "React Next.js Jotai Tailwind",
-  link: "https://suduko-next-js.vercel.app/",
-  gitLink: "https://github.com/NatanOih/suduko-nextJS",
-};
-
-export default function ProjectCard({ currentProject = "nothing" }: CardProps) {
+export default function ProjectCard({ currentProject }: any) {
   const [animationTrigger, setAnimationTrigger] = useState(true);
 
   useEffect(() => {
@@ -45,14 +42,16 @@ export default function ProjectCard({ currentProject = "nothing" }: CardProps) {
           width={280}
           height={250}
           alt="saf"
-          src={sudokuIMG}
+          src={currentProject?.src}
         />
-        <div className="absolute bottom-[20%] text-[#dbd8d6]">
-          <h1 className="leading-[6vw] font-[600] text-[6vw]">{image.title}</h1>
-          <h2 className="gallery-info-subtitle z-2 relative leading-[6vw]  font-[400] antialiased stroke-2 stroke-black text-[6vw] bg-white bg-opacity-60 text-center w-[80%] hover:bg-black hover:bg-opacity-20 ease-in-out transform duration-100 active:scale-90  hover:text-white ">
+        <div className="absolute bottom-[18%] text-[#dbd8d6] stroke-black stroke-2">
+          <h1 className="leading-[6vw] font-[600] py-8 underline text-[6vw]">
+            {currentProject?.title}
+          </h1>
+          <h2 className=" relative leading-[6vw] w-fit h-fit font-[400] antialiased stroke-2 px-3  rounded-md stroke-black text-[6vw] bg-white/10 text-center  hover:bg-black hover:bg-opacity-20 ease-in-out transform duration-100 active:scale-90 hover:text-white ">
             <a
               target="_blank"
-              href={image.link}
+              href={currentProject?.link}
               className="hover:cursor-pointer "
             >
               Live Site
@@ -60,7 +59,7 @@ export default function ProjectCard({ currentProject = "nothing" }: CardProps) {
           </h2>
           <p className="antialiased mt-[2vh] z-1 relative leading-[24px] font-[400] text-[24px]">
             <a
-              href={image.gitLink}
+              href={currentProject?.gitLink}
               target="_blank"
               className="hover:cursor-pointer"
             >
@@ -68,7 +67,7 @@ export default function ProjectCard({ currentProject = "nothing" }: CardProps) {
             </a>
           </p>
           <p className="antialiased mt-[2vh] z-1 relative leading-[24px] font-[400] text-[24px]">
-            {image.category}
+            {currentProject?.category}
           </p>
         </div>
       </div>
