@@ -21,7 +21,7 @@ const introText = [
   "gap",
   '"quality is',
   "not an act",
-  'it is a habbit."',
+  'it is a habit."',
 ];
 export default function Intro() {
   // const { loading, setLoading } = useLoading();
@@ -42,7 +42,7 @@ export default function Intro() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className={`font-extrabold relative w-[75vw] lg:h-[35vw] md:h-[80%] p-2 justify-center items-center select-none overflow-hidden flex flex-col border-[9px] border-black/70 bg-white/10 whitespace-pre uppercase tracking-widest lg:text-[8vw] md:text-[7.7rem] sm:text-[5rem] lg:leading-[4.9vw]  md:leading-[2rem] `}
+          className={`font-extrabold relative transition-all w-[75vw] lg:h-[37vw] md:h-[80%] p-2 justify-center items-center select-none overflow-hidden flex flex-col border-[9px] border-black/70 bg-[#293462]/80 dark:bg-white/10 whitespace-pre uppercase tracking-widest lg:text-[8vw] md:text-[7.7rem] sm:text-[5rem] lg:leading-[5.0vw]  md:leading-[2rem] `}
         >
           {introText.map((word, wordIndex) => {
             return (

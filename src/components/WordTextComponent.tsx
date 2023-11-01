@@ -51,13 +51,13 @@ export default function WordTextComponent({ word, index, scrollY }: word) {
               type: "spring",
             }
       }
-      className={` flex flex-row pr-[5vw]  justify-center w-[80%] ${
+      className={` flex flex-row pr-[5vw] py-[0.3vw] dark:text-[#FCECDD]/90 justify-center w-[80%] ${
         word === "developer" || word === "not an act"
-          ? "pl-[15vw] bg-[#22dddd]/30 w-auto  rounded-xl"
+          ? "pl-[15vw] bg-[#d53f41]/80 dark:bg-[#d53f41]/10 w-[90%]  rounded-xl"
           : ""
       }  ${
-        word === 'it is a habbit."'
-          ? "pt-12 text-gray-950/80 justify-center lg:indent-[0.5vw] md:indent-3 tracking-tight pl-[5vw] "
+        word === 'it is a habit."'
+          ? "pt-12  text-[#FCECDD]/90 dark:text-slate-950/90 drop-shadow-md justify-center lg:indent-[0.5vw] md:indent-3 tracking-tight pl-[5vw] "
           : ""
       } 
        
