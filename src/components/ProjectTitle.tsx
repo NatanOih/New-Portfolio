@@ -28,9 +28,9 @@ export default function ProjectTitle({
     <p
       ref={ref}
       className={twMerge(
-        "py-24 font-mono select-none flex flex-col gap-6 text-5xl text-black/80 rounded-sm",
+        "py-24 font-mono select-none flex flex-col gap-6 text-5xl dark:text-black/80 text-black/20 rounded-sm",
         isInView &&
-          " text-gray-200  font-bold bg-gray-500/20 transition-all !duration-1000"
+          " dark:text-gray-200 text-black/80  font-bold dark:bg-gray-500/20 bg-gray-700/50 transition-all !duration-1000"
       )}
     >
       {currentProject && (

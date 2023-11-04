@@ -40,10 +40,10 @@ export default function FrontMaskElement({
       <article
         id="HIDDEN"
         style={isHidden ? mask : mask2}
-        className=" absolute flex flex-col items-center gap-4 justify-start p-6 top-0 z-2 w-full h-[40rem]  rounded-lg border-black border-2 bg-zinc-200/80"
+        className=" absolute flex flex-col items-center gap-4 justify-start p-6 top-0 z-2 w-full h-[40rem]  rounded-lg border-black border-2 dark:bg-[#dbd8d6] bg-zinc-100/80"
       >
         <div className="flex justify-center">
-          <h3 className=" font-playfair  w-fit  font-semibold text-center text-8xl p-1 text-black h-fit bg-white/80 rounded-lg ">
+          <h3 className=" font-playfair  w-fit  font-semibold text-center text-8xl p-1 dark:text-black h-fit dark:bg-white/80 bg-black text-[#dbd8d6]  rounded-lg ">
             MY
             <span className="border-4  border-black hello">SKILLS</span>
           </h3>
@@ -54,7 +54,7 @@ export default function FrontMaskElement({
 
       <button
         onClick={handleTransition}
-        className="absolute bottom-5 right-5 w-15 h-15 text-5xl bg-black rounded-full hover:text-white/70 hover:bg-black/80 border-2 p-1 hover:animate-none  hover:scale-110 active:scale-95 transition-all duration-500 ease-in-out  "
+        className="absolute bottom-5 right-5 w-15 h-15 text-5xl dark:bg-gray-950 bg-gray-200 rounded-full dark:hover:text-gray-200 hover:text-gray-900 hover:border-black/20  dark:hover:border-black/80 border-2 p-1 hover:animate-none  hover:scale-110 active:scale-95 transition-all duration-400 ease-in-out  "
       >
         {!isHidden ? <BsLampFill /> : <BsLamp />}
       </button>

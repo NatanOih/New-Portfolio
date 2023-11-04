@@ -3,16 +3,17 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import sudokuIMG from "/public/sudokuIMG.png";
+import cabinImg from "/public/cabinImg.png";
 
 export const links = [
   {
     name: "Home",
     hash: "#home",
   },
-  {
-    name: "About",
-    hash: "#about",
-  },
+  // {
+  //   name: "About",
+  //   hash: "#about",
+  // },
   {
     name: "Skills",
     hash: "#skills",
@@ -88,27 +89,18 @@ export const projectData = [
     description:
       "A sudoku App featuring animations, server actions, unique design and state managment.",
     title: "Sudoko App",
-    category: "React, Next.js, Jotai, Tailwind",
+    category: "React, NextJS, Jotai, Tailwind",
     link: "https://suduko-next-js.vercel.app/",
     gitLink: "https://github.com/NatanOih/suduko-nextJS",
   },
   {
-    src: sudokuIMG,
+    src: cabinImg,
     description:
-      "A sudoku App featuring animations, server actions, unique design and state managment.",
-    title: "Sudoko App 2",
-    category: "React Next.js Jotai Tailwind",
-    link: "https://suduko-next-js.vercel.app/",
-    gitLink: "https://github.com/NatanOih/suduko-nextJS",
-  },
-  {
-    src: sudokuIMG,
-    description:
-      "A sudoku App featuring animations, server actions, unique design and state managment.",
-    title: "Sudoko App 3",
-    category: "React Next.js Jotai Tailwind",
-    link: "https://suduko-next-js.vercel.app/",
-    gitLink: "https://github.com/NatanOih/suduko-nextJS",
+      "A frontend project for a landing page concept of a cabin hosting site. I used this project to experiment different styling and animation metheods. ",
+    title: "Cabin Hosting",
+    category: "React, Styled Components, Framer Motion, Locomotive Scroll",
+    link: "https://cabin-boarding-natan-oihman.vercel.app/",
+    gitLink: "https://github.com/NatanOih/Cabin-Boarding-natan-oihman",
   },
 ] as any;
 
