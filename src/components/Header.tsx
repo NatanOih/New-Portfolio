@@ -23,7 +23,7 @@ export default function Header() {
 
   if (loading) {
     return (
-      <div className="bg-black fixed top-0 left-0 w-full h-full">
+      <div className="bg-black fixed top-0 left-0 w-[110vw] overflow-hidden h-[110vh] ">
         <div className="absolute top-[50vh] left-[50vw] rounded-full w-10 h-10  border-t-4 border-slate-600 animate-spin"></div>
       </div>
     );
