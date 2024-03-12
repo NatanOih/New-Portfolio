@@ -1,10 +1,10 @@
-import Contact from "@/components/Contact";
-import Experience from "@/components/Experience";
-import Intro from "@/components/Intro";
-import ProgressBar from "@/components/ProgressBar";
-import Projects from "@/components/Projects";
+import Contact from "@/components/Contact/Contact";
+import Experience from "@/components/Expirience/Experience";
+import Intro from "@/components/Intro/Intro";
+import ProgressBar from "@/components/ProjectSection/ProgressBar";
+import Projects from "@/components/ProjectSection/Projects";
 import SectionDevider from "@/components/SectionDevider";
-import Skills from "@/components/Skills";
+import Skills from "@/components/Skills/Skills";
 
 export default function Home() {
   return (

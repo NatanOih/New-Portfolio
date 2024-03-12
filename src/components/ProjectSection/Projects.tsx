@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import SectionHeading from "./SectionHeading";
+import SectionHeading from "../SectionHeading";
 import { projectData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import ProjectTitle from "./ProjectTitle";

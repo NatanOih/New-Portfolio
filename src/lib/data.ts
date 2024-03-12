@@ -4,16 +4,14 @@ import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import sudokuIMG from "/public/sudokuIMG.png";
 import cabinImg from "/public/cabinImg.png";
+import admindash from "/public/admindash.png";
 
 export const links = [
   {
     name: "Home",
     hash: "#home",
   },
-  // {
-  //   name: "About",
-  //   hash: "#about",
-  // },
+
   {
     name: "Skills",
     hash: "#skills",
@@ -70,16 +68,17 @@ export const experiencesData = [
     title: "Software Development Journey",
     location: "Self-Taught",
     description:
-      "After Graduating my Degree, I have started to expand my knowledge in python, building small ",
+      "After Graduating my Degree, I have started to expand my knowledge in python, building small physics engines and after that i moved to web dev content learning javascript, react, nextjs ",
     icon: React.createElement(FaReact),
     date: "2022",
   },
   {
     title: "Software Developmer ",
     location: "Omnitelecom, Ramat-Gan",
-    description: "Software Developmer withing the infrastracture team ",
+    description:
+      "Software Developer within the Infrastructure team, possessing expertise in Linux servers, Perl, Bash, and Python programming scripting. Demonstrated proficiency in software architecture, web architecture, API handling, and telephony client management using Python and Asterisk. Experienced in web development with React and NextJS in conjunction with Django.",
     icon: React.createElement(FaReact),
-    date: "2023",
+    date: "2023-2024",
   },
 ] as const;
 
@@ -101,6 +100,15 @@ export const projectData = [
     category: "React, Styled Components, Framer Motion, Locomotive Scroll",
     link: "https://cabin-boarding-natan-oihman.vercel.app/",
     gitLink: "https://github.com/NatanOih/Cabin-Boarding-natan-oihman",
+  },
+  {
+    src: admindash,
+    description:
+      "A Mock NextJS/React dashboard site with a basic password auth, mongoDB database connection using react server components. you can add and remove users and products, with pagenation and url state handling ",
+    title: "Cabin Hosting",
+    category: "React, NextJS, Next-auth, MongoDB, Server Components + Actions ",
+    link: "https://admin-dashboard-alpha-drab.vercel.app/",
+    gitLink: "https://github.com/NatanOih/admin-dashboard",
   },
 ] as any;
 

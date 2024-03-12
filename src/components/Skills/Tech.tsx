@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
-import { experitesFields } from "@/lib/data";
 import Image from "next/image";
 
 type techListObject = {

@@ -51,13 +51,13 @@ export default function WordTextComponent({ word, index, scrollY }: word) {
               type: "spring",
             }
       }
-      className={` flex flex-row pr-[5vw] py-[0.3vw] dark:text-[#FCECDD]/90 justify-center w-[80%] ${
-        word === "developer" || word === "not an act"
-          ? "pl-[15vw] bg-[#d53f41]/80 dark:bg-[#d53f41]/10 w-[90%]  rounded-xl"
+      className={` flex flex-row sm:pr-[5vw] sm:py-0 py-[0.8rem] pr-2  dark:text-[#FCECDD]/90 justify-center sm:w-[80%]  ${
+        word === "developer" || word === "not an act,"
+          ? "pl-[12vw] bg-[#d53f41]/80 dark:bg-[#d53f41]/10 w-[90%]  rounded-xl"
           : ""
       }  ${
         word === 'it is a habit."'
-          ? "pt-12  text-[#FCECDD]/90 dark:text-slate-950/90 drop-shadow-md justify-center lg:indent-[0.5vw] md:indent-3 tracking-tight pl-[5vw] "
+          ? "pt-10  text-[#FCECDD]/90 dark:text-slate-950/90 drop-shadow-md justify-center lg:indent-[0.3vw] md:indent-[0.55vw] tracking-tight pl-[5vw] "
           : ""
       } 
        
@@ -65,7 +65,7 @@ export default function WordTextComponent({ word, index, scrollY }: word) {
       key={word}
     >
       {word == "gap" ? (
-        <div className="py-6" />
+        <div className="lg:py-6 py-4" />
       ) : (
         word.split("").map((letter, letterIndex) => (
           <React.Fragment key={letterIndex}>
