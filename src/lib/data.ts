@@ -105,7 +105,7 @@ export const projectData = [
     src: admindash,
     description:
       "A Mock NextJS/React dashboard site with a basic password auth, mongoDB database connection using react server components. you can add and remove users and products, with pagenation and url state handling ",
-    title: "Cabin Hosting",
+    title: "Admin Dashboard",
     category: "React, NextJS, Next-auth, MongoDB, Server Components + Actions ",
     link: "https://admin-dashboard-alpha-drab.vercel.app/",
     gitLink: "https://github.com/NatanOih/admin-dashboard",
