@@ -16,6 +16,17 @@ export default function Header() {
 
   const { loading, setLoading } = useLoading();
 
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    linkName: any,
+    linkHash: string
+  ) => {
+    e.preventDefault();
+    document.querySelector(linkHash)?.scrollIntoView({ behavior: "smooth" });
+    setActiveSection(linkName);
+    setTimeOfLastClick(Date.now());
+  };
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -57,10 +68,7 @@ export default function Header() {
                   }`
                 )}
                 href={link.hash}
-                onClick={() => {
-                  setActiveSection(link.name);
-                  setTimeOfLastClick(Date.now());
-                }}
+                onClick={(e) => handleClick(e, link.name, link.hash)}
               >
                 {link.name}
                 {link.name === activeSection && (
