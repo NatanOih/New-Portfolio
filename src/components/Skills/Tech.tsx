@@ -55,7 +55,7 @@ export const Tech = ({ title, techList, isHidden, ShowSkills }: TechProps) => {
             delay: 0.6,
             ease: "easeInOut",
           }}
-          className=" text-center text-black font-semibold text-6xl "
+          className=" text-center text-black font-semibold xl:text-6xl  text-4xl "
         >
           {title.replace("_", " ")}
         </motion.h3>

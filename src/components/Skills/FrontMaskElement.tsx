@@ -40,10 +40,10 @@ export default function FrontMaskElement({
       <article
         id="HIDDEN"
         style={isHidden ? mask : mask2}
-        className=" absolute flex flex-col items-center gap-4 justify-start p-6 top-0 z-2 w-full h-[40rem]  rounded-lg border-black border-2 dark:bg-[#dbd8d6] bg-zinc-100/80"
+        className=" absolute flex flex-col items-center gap-4 justify-start  p-6 top-0 z-2 w-full h-[40rem]  rounded-lg border-black border-2 dark:bg-[#dbd8d6] bg-zinc-100/80"
       >
         <div className="flex justify-center">
-          <h3 className=" font-playfair  w-fit  font-semibold text-center text-8xl p-1 dark:text-black h-fit dark:bg-white/80 bg-black text-[#dbd8d6]  rounded-lg ">
+          <h3 className=" font-playfair  w-fit  font-semibold text-center xl:text-8xl md:text-6xl text-4xl  p-1 dark:text-black h-fit dark:bg-white/80 bg-black text-[#dbd8d6]  rounded-lg ">
             MY
             <span className="border-4  border-black hello">SKILLS</span>
           </h3>
