@@ -34,7 +34,7 @@ export default function SocialLinks() {
       <a
         className="bg-white cursor-pointer   flex hover:scale-105
           transition active:scale-95  dark:bg-white/10 dark:hover:border-white/50 dark:border-gray-800/40 dark:text-white/60 gap-2 items-center justify-center rounded-full outline-none  text-gray-950 px-7 py-3 border-black/70 border-2"
-        href="/_Natan Oihman CV.pdf"
+        href="_Natan Oihman CV .pdf"
         target="_blank"
       >
         {" "}
