@@ -5,6 +5,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import sudokuIMG from "/public/sudokuIMG.png";
 import cabinImg from "/public/cabinImg.png";
 import admindash from "/public/admindash.png";
+import gallery from "/public/gallery.png";
 
 export const links = [
   {
@@ -110,6 +111,16 @@ export const projectData = [
   //   link: "https://admin-dashboard-alpha-drab.vercel.app/",
   //   gitLink: "https://github.com/NatanOih/admin-dashboard",
   // },
+  {
+    title: "Gallery Web App",
+    src: gallery,
+    description:
+      "Gallery web app, you can upload anything and delete your own uploads. auth with Clerk, parallel routes (you can copy the url of an image and it will open in its own page) ",
+    category:
+      "React, NextJS, PostgreSQL, Drizzle, Server actions and components",
+    link: "https://natan-gallery.vercel.app/",
+    gitLink: "https://github.com/NatanOih/natan-gallery",
+  },
 ] as any;
 
 export const skillsData = [
