@@ -89,7 +89,7 @@ export const projectData = [
     src: ng,
     description:
       "A Game App featuring animations, server actions, unique design and state managment. i keep on adding games i keep on implement.",
-    title: "Sudoko App",
+    title: "Game App",
     category: "React, NextJS, Jotai, Tailwind",
     link: "https://natan-game-app.vercel.app/",
     gitLink: "https://github.com/NatanOih/natan-game-app",
@@ -152,6 +152,7 @@ export const frontEndImg = [
   { name: "TypeScript", path: "ts.png" },
   { name: "React", path: "react.png" },
   { name: "Redux", path: "redux-icon.png" },
+  { name: "Jotai", path: "Jotai.png" },
   { name: "Tailwind", path: "tailwind-css-icon.png" },
   { name: "HTMX", path: "htmx.png" },
   { name: "MatirialUI", path: "matirialui.png" },
@@ -161,12 +162,13 @@ export const frontEndImg = [
 ] as const;
 
 export const backEndImg = [
-  { name: "NodeJS", path: "node.png" },
-  { name: "ExpressJs", path: "expressjs.png" },
-  { name: "Nextjs", path: "Nextjs-logo.png" },
+  { name: "Node.js", path: "node.png" },
+  { name: "Express.js", path: "expressjs.png" },
+  { name: "Next.js", path: "Nextjs-logo.png" },
   { name: "RestAPI", path: "api-icon.png" },
   { name: "Mongodb", path: "mongo.png" },
   { name: "SQL", path: "sql.png" },
+  { name: "Linux", path: "linux.png" },
   { name: "npm", path: "npm.png" },
   { name: "git", path: "git.png" },
   { name: "Golang", path: "go.png" },

@@ -52,11 +52,13 @@ export default function SkillsContent({ isHidden }: skillsContentType) {
                   }}
                   onMouseEnter={() => {
                     setSkillCard(field);
-
+                    if (field === skillCard) {
+                      return;
+                    }
                     setShowSkills(false);
                     setTimeout(() => {
                       setShowSkills(true);
-                    }, 200);
+                    }, 50);
                   }}
                   className="cursor-pointer p-2 hover:!-translate-y-3 hover:!transition-all hover:!hue-rotate-90"
                 >
