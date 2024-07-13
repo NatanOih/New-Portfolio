@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import Image from "next/image";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 type techListObject = {
   path: string;
+  name: string;
 };
 type TechProps = {
   title: string;
@@ -75,16 +82,25 @@ export const Tech = ({ title, techList, isHidden, ShowSkills }: TechProps) => {
               }}
               key={id}
               style={{ filter: "grayscale(20%)" }}
-              className="justify-center flex items-center p-1 border-2 bg-white cursor-pointer border-black hover:!bg-white/50 hover:!scale-125 hover:!transition-all"
+              className="justify-center relative flex items-center p-1 border-2 bg-white cursor-pointer border-black hover:!bg-white/50 hover:!scale-110 hover:!transition-all"
             >
-              <Image
-                alt={skill.path}
-                width={50}
-                height={50}
-                style={{ objectFit: "cover" }}
-                src={"/img/" + skill.path}
-                loading="eager"
-              />
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Image
+                      alt={skill.path}
+                      width={50}
+                      height={50}
+                      style={{ objectFit: "cover" }}
+                      src={"/img/" + skill.path}
+                      loading="eager"
+                    />
+                  </TooltipTrigger>
+                  <TooltipContent className=" bg-black">
+                    <p>{skill.name}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </motion.div>
           );
         })}

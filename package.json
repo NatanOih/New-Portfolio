@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-tooltip": "^1.1.2",
     "@react-email/components": "^0.0.7",
     "@react-email/tailwind": "^0.0.8",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "framer-motion": "^10.16.4",
+    "lucide-react": "^0.408.0",
     "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -20,7 +24,8 @@
     "react-intersection-observer": "^9.5.2",
     "react-vertical-timeline-component": "^3.6.0",
     "resend": "^0.16.0",
-    "tailwind-merge": "^1.14.0"
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",
