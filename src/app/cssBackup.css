@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  --line-color: #9ca3af;
+}
+
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.05);
+}
+
+.borderBlack {
+  @apply border border-black/10;
+}
+
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(182, 182, 182);
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.hello {
+  z-index: 100;
+  box-shadow: 4px 4px 0px 4px rgb(194, 11, 185);
+  /* transition: all 0.5s ease-in-out; */
+}
+
+.hello2 {
+  z-index: 100;
+  box-shadow: 4px 4px 0px 4px rgba(194, 11, 185, 0.315);
+  /* transition: all 0.5s ease-in-out; */
+}

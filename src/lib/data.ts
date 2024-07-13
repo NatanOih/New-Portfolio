@@ -3,6 +3,7 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import sudokuIMG from "/public/sudokuIMG.png";
+import ng from "/public/ng.png";
 import cabinImg from "/public/cabinImg.png";
 import admindash from "/public/admindash.png";
 import gallery from "/public/gallery.png";
@@ -85,13 +86,13 @@ export const experiencesData = [
 
 export const projectData = [
   {
-    src: sudokuIMG,
+    src: ng,
     description:
-      "A sudoku App featuring animations, server actions, unique design and state managment.",
+      "A Game App featuring animations, server actions, unique design and state managment. i keep on adding games i keep on implement.",
     title: "Sudoko App",
     category: "React, NextJS, Jotai, Tailwind",
-    link: "https://suduko-next-js.vercel.app/",
-    gitLink: "https://github.com/NatanOih/suduko-nextJS",
+    link: "https://natan-game-app.vercel.app/",
+    gitLink: "https://github.com/NatanOih/natan-game-app",
   },
   {
     src: cabinImg,
@@ -117,7 +118,7 @@ export const projectData = [
     description:
       "Gallery web app, you can upload anything and delete your own uploads. auth with Clerk, parallel routes (you can copy the url of an image and it will open in its own page) ",
     category:
-      "React, NextJS, PostgreSQL, Drizzle, Server actions and components",
+      "React, NextJS, PostgreSQL, Drizzle, Server actions and server components",
     link: "https://natan-gallery.vercel.app/",
     gitLink: "https://github.com/NatanOih/natan-gallery",
   },
@@ -152,23 +153,24 @@ export const frontEndImg = [
   { name: "React", path: "react.png" },
   { name: "Redux", path: "redux-icon.png" },
   { name: "TailwindCSS", path: "tailwind-css-icon.png" },
-  { name: "Bootstrap", path: "bootstrap.png" },
+  { name: "htmx", path: "htmx.png" },
   { name: "matirialui", path: "matirialui.png" },
-  { name: "styled-components", path: "styled-components.png" },
+  { name: "ShadcnUI", path: "shadcn.png" },
   { name: "gsap", path: "gsap.png" },
   { name: "motion", path: "motion.png" },
 ] as const;
 
 export const backEndImg = [
-  { name: "nodeJS", path: "node.png" },
-  { name: "expressJs", path: "expressjs.png" },
+  { name: "NodeJS", path: "node.png" },
+  { name: "ExpressJs", path: "expressjs.png" },
   { name: "Nextjs", path: "Nextjs-logo.png" },
   { name: "API", path: "api-icon.png" },
-  { name: "mongodb", path: "mongo.png" },
+  { name: "Mongodb", path: "mongo.png" },
   { name: "SQL", path: "sql.png" },
   { name: "npm", path: "npm.png" },
   { name: "git", path: "git.png" },
-  { name: "python", path: "python.png" },
+  { name: "Golang", path: "go.png" },
+  { name: "Python", path: "python.png" },
 ] as const;
 
 export const experitesFields = [
