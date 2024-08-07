@@ -24,7 +24,7 @@ export default function ProjectCard({ currentProject }: any) {
             !animationTrigger
               ? "opacity-0 -translate-x-10"
               : "opacity-100 translate-x-0"
-          } rounded-lg transition-all xl:w-[15vw] xl:h-[15vw] w-[20vw] h-[20vw] -right-4 z-0 overflow-hidden  border-2 border-black/20 brightness-90 hello -bottom-20`}
+          } rounded-lg transition-all xl:w-[15vw] xl:h-[15vw] w-[20vw] h-[20vw] -right-4 z-0 overflow-hidden  border-2 border-black/20 brightness-70 hello3 -bottom-20`}
         >
           <Image fill alt="saf" src={currentProject?.src} />
         </div>

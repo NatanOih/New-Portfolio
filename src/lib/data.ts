@@ -2,7 +2,7 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import sudokuIMG from "/public/sudokuIMG.png";
+
 import ng from "/public/ng.png";
 import cabinImg from "/public/cabinImg.png";
 import admindash from "/public/admindash.png";
@@ -88,7 +88,7 @@ export const projectData = [
   {
     src: ng,
     description:
-      "A Game App featuring animations, server actions, unique design and state managment. i keep on adding games i keep on implement.",
+      "A Game App featuring animations, server actions, unique design and state managment. I recreate games focusing on the server to handle the game logic, fetches, and api calls using Server-Actions paradigm.",
     title: "Game App",
     category: "React, NextJS, Jotai, Tailwind",
     link: "https://natan-game-app.vercel.app/",
@@ -116,7 +116,7 @@ export const projectData = [
     title: "Gallery Web App",
     src: gallery,
     description:
-      "Gallery web app, you can upload anything and delete your own uploads. auth with Clerk, parallel routes (you can copy the url of an image and it will open in its own page) ",
+      "Gallery web app, you can upload anything and delete your own uploads. Auth with Clerk, parallel routes (you can copy the url of an image and it will open in its own page), Postgres SQL ",
     category:
       "React, NextJS, PostgreSQL, Drizzle, Server actions and server components",
     link: "https://natan-gallery.vercel.app/",

@@ -27,25 +27,34 @@ function isTouchDevice() {
   return false; // Fallback for non-browser environments
 }
 
-export function useIsTouchDevice() {
-  const [touchDevice, setTouchDevice] = useState(isTouchDevice());
+export function useIsTouchDevice(): boolean {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
-    // Function to handle the resize event and recheck if it's a touch device
-    function handleResize() {
-      setTouchDevice(isTouchDevice());
-    }
+    const checkIfMobile = () => {
+      const isTouchDevice: boolean =
+        "ontouchstart" in window || navigator.maxTouchPoints > 0;
+      const isMobileUserAgent: boolean =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        );
+      const isMobileWindowSize: boolean = window.innerWidth <= 768;
 
-    // Attach the event listener for the resize event
-    window.addEventListener("resize", handleResize);
+      setIsMobile(isTouchDevice || isMobileUserAgent || isMobileWindowSize);
+    };
 
-    // Clean up the event listener when the component unmounts
+    checkIfMobile();
+
+    // Add resize listener to re-check on screen size changes
+    window.addEventListener("resize", checkIfMobile);
+
+    // Cleanup the listener on unmount
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", checkIfMobile);
     };
   }, []);
 
-  return touchDevice;
+  return isMobile;
 }
 
 export function useLocalMousePosition() {
