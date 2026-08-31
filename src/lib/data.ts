@@ -82,6 +82,14 @@ export const experiencesData = [
     icon: React.createElement(FaReact),
     date: "2023-2024",
   },
+  {
+    title: "Frontend Developer",
+    location: "Mobitti Ltd, Remote",
+    description:
+      "Core frontend developer owning end-to-end delivery of production modules across React, TypeScript, and Vue platforms serving academic and enterprise clients. Spearheaded a ground-up migration of native Flutter and legacy Vue applications to modern React 19 / TypeScript single-page apps using Vite, Redux Toolkit, and Redux-Saga. Architected scalable, multi-tenant UI components and state infrastructure, along with centralized session and auth managers featuring OTP/SMS retry flows, silent refresh, and circuit-breaker mechanisms.",
+    icon: React.createElement(FaReact),
+    date: "2024-2026",
+  },
 ] as const;
 
 export const projectData = [
