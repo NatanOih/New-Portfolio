@@ -7,6 +7,7 @@ import ng from "../../public/ng.png";
 import cabinImg from "../../public/cabinImg.png";
 import admindash from "../../public/admindash.png";
 import gallery from "../../public/gallery.png";
+import spotifake from "../../public/spotifake.png";
 
 export const links = [
   {
@@ -129,6 +130,15 @@ export const projectData = [
       "React, NextJS, PostgreSQL, Drizzle, Server actions and server components",
     link: "https://natan-gallery.vercel.app/",
     gitLink: "https://github.com/NatanOih/natan-gallery",
+  },
+  {
+    title: "SpotiFake",
+    src: spotifake,
+    description:
+      "A Spotify-inspired music browser built with React, Jotai, and Tailwind. Browse popular albums, view track listings, search within a playlist, and save favorites, all persisted to local storage with a dark mode toggle.",
+    category: "React, React-Router, Jotai, Tailwind",
+    link: "https://spoti-fake.vercel.app/",
+    gitLink: "https://github.com/NatanOih/SpotiFake",
   },
 ] as any;
 
