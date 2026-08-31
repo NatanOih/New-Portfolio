@@ -3,10 +3,10 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 
-import ng from "/public/ng.png";
-import cabinImg from "/public/cabinImg.png";
-import admindash from "/public/admindash.png";
-import gallery from "/public/gallery.png";
+import ng from "../../public/ng.png";
+import cabinImg from "../../public/cabinImg.png";
+import admindash from "../../public/admindash.png";
+import gallery from "../../public/gallery.png";
 
 export const links = [
   {
