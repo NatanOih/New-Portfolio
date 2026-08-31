@@ -86,7 +86,7 @@ export const experiencesData = [
     title: "Frontend Developer",
     location: "Mobitti Ltd, Remote",
     description:
-      "Core frontend developer owning end-to-end delivery of production modules across React, TypeScript, and Vue platforms serving academic and enterprise clients. Spearheaded a ground-up migration of native Flutter and legacy Vue applications to modern React 19 / TypeScript single-page apps using Vite, Redux Toolkit, and Redux-Saga. Architected scalable, multi-tenant UI components and state infrastructure, along with centralized session and auth managers featuring OTP/SMS retry flows, silent refresh, and circuit-breaker mechanisms.",
+      "Owned end-to-end delivery of production frontend modules for academic and enterprise clients, working across React, TypeScript, and Vue. Led a ground-up migration of legacy Flutter and Vue applications to a modern React 19 / TypeScript stack built with Vite, Redux Toolkit, and Redux-Saga. Architected multi-tenant UI components and state infrastructure, and built centralized session and authentication systems with OTP/SMS retry flows, silent token refresh, and circuit-breaker safeguards, while resolving critical platform bugs across the stack.",
     icon: React.createElement(FaReact),
     date: "2024-2026",
   },
