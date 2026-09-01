@@ -6,7 +6,7 @@ import {
   useIsTouchDevice,
   useScrollWithinBounds,
   useSectionInView,
-} from "@/lib/hooks";
+} from "@/app/code/_lib/hooks";
 import WordTextComponent from "./WordTextComponent";
 import SocialLinks from "./SocialLinks";
 import Subtitle from "./Subtitle";

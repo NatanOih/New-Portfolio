@@ -1,4 +1,4 @@
-import { experitesFields } from "@/lib/data";
+import { experitesFields } from "@/app/code/_lib/data";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { Tech } from "./Tech";

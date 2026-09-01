@@ -1,7 +1,7 @@
 import React from "react";
-import { projectObject } from "@/lib/types";
+import { projectObject } from "@/app/code/_lib/types";
 import { motion } from "framer-motion";
-import { projectData } from "@/lib/data";
+import { projectData } from "@/app/code/_lib/data";
 import ProjectTitle from "./ProjectTitle";
 import ProjectCard from "./ProjectCard";
 import ProjectCardMobile from "./ProjectCardMobile";

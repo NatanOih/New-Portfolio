@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Resend } from "resend";
-import ContactFormEmail from "@/lib/contact-form-email";
+import ContactFormEmail from "@/app/code/_lib/contact-form-email";
 import { getErrorMessage, validateString } from "./validations";
 
 const resend = new Resend(process.env.RESEND_API_KEY);

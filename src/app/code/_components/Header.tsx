@@ -2,12 +2,12 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { links } from "@/lib/data";
+import { links } from "@/app/code/_lib/data";
 import Link from "next/link";
 import { useEffect } from "react";
 import { twMerge } from "tailwind-merge";
-import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
-import { useLoading } from "@/context/LoadingContext";
+import { useActiveSectionContext } from "@/app/code/_context/ActiveSectionContextProvider";
+import { useLoading } from "@/app/code/_context/LoadingContext";
 import ThemeSwitch from "./ThemeSwitch";
 
 export default function Header() {

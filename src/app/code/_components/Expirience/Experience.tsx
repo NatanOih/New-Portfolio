@@ -3,8 +3,8 @@ import React from "react";
 import SectionHeading from "../SectionHeading";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { experiencesData } from "@/lib/data";
-import { useSectionInView } from "@/lib/hooks";
+import { experiencesData } from "@/app/code/_lib/data";
+import { useSectionInView } from "@/app/code/_lib/hooks";
 import CustomVerticalElement from "./CustomVerticalElement";
 
 export default function Experience() {

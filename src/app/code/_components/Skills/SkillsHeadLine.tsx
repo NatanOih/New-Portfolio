@@ -1,4 +1,4 @@
-import { hiddenProps } from "@/lib/types";
+import { hiddenProps } from "@/app/code/_lib/types";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 export default function SkillsHeadLine({ isHidden }: hiddenProps) {

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import type { SectionName, mousePosType } from "./types";
-import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
+import { useActiveSectionContext } from "@/app/code/_context/ActiveSectionContextProvider";
 
 export function useSectionInView(sectionName: SectionName, threshold = 0.75) {
   const { ref, inView } = useInView({

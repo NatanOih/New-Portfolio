@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-import { projectObject } from "@/lib/types";
+import { projectObject } from "@/app/code/_lib/types";
 import { setTimeout } from "timers/promises";
 
 type ProjectTitleType = {

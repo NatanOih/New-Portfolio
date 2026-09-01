@@ -1,4 +1,4 @@
-import { FromtProps } from "@/lib/types";
+import { FromtProps } from "@/app/code/_lib/types";
 import React, { useState } from "react";
 import SkillsContent from "./SkillsContent";
 import { BsLamp, BsLampFill } from "react-icons/bs";

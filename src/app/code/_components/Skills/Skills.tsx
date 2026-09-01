@@ -1,5 +1,5 @@
 "use client";
-import { useLocalMousePosition, useSectionInView } from "@/lib/hooks";
+import { useLocalMousePosition, useSectionInView } from "@/app/code/_lib/hooks";
 import React, { useState } from "react";
 
 import { twMerge } from "tailwind-merge";

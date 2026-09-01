@@ -2,9 +2,9 @@
 import React from "react";
 import SectionHeading from "../SectionHeading";
 import { motion } from "framer-motion";
-import { useSectionInView } from "@/lib/hooks";
+import { useSectionInView } from "@/app/code/_lib/hooks";
 import CopyToClip from "./CopyToClip";
-import { sendEmail } from "@/lib/actions";
+import { sendEmail } from "@/app/code/_lib/actions";
 import SubmitBtn from "./SubmitBtn";
 import toast from "react-hot-toast";
 

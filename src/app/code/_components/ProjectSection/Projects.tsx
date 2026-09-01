@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import SectionHeading from "../SectionHeading";
-import { projectData } from "@/lib/data";
-import { useIsTouchDevice, useSectionInView } from "@/lib/hooks";
+import { projectData } from "@/app/code/_lib/data";
+import { useIsTouchDevice, useSectionInView } from "@/app/code/_lib/hooks";
 import ProjectTitle from "./ProjectTitle";
 import ProjectCard from "./ProjectCard";
-import { projectObject } from "@/lib/types";
+import { projectObject } from "@/app/code/_lib/types";
 import { motion } from "framer-motion";
 import ProjectMobile from "./ProjectMobile";
 

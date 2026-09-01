@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useIsTouchDevice, useLocalMousePosition } from "@/lib/hooks";
+import { useIsTouchDevice, useLocalMousePosition } from "@/app/code/_lib/hooks";
 
 export default function CopyToClip() {
   const [isCopied, setIsCopied] = useState(false);
