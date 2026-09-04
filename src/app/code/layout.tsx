@@ -17,7 +17,7 @@ export default function CodeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-[#fde5ec2a]/60 transition-all text-gray-950 relative pt-14 sm:pt-14 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90 min-h-screen">
+    <div className="bg-[#fde5ec2a]/60 transition-all text-gray-950 relative pt-14 sm:pt-14 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90 min-h-screen overflow-x-hidden">
       <ThemeContextProvider>
         <ActiveSectionContextProvider>
           <LoadingContextProvider>
