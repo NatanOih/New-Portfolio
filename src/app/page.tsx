@@ -49,7 +49,7 @@ export default function LandingPage() {
             alt="Playing bass with the band"
             fill
             placeholder="blur"
-            className="object-cover grayscale brightness-75 transition-all duration-500 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105"
+            className="object-cover object-[22%_30%] grayscale brightness-75 transition-all duration-500 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
           <div className="relative h-full flex flex-col items-center justify-end gap-2 text-center p-8">
