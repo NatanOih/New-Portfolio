@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Code2, Guitar } from "lucide-react";
 import OrbitCursor from "./_components/OrbitCursor";
 import bandPhoto from "../../public/band-photo.jpg";
 import devIllustration from "../../public/dev-illustration.jpg";
@@ -28,9 +29,11 @@ export default function LandingPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
           <div className="relative h-full flex flex-col items-center justify-end gap-2 text-center p-8">
-            <span className="text-4xl transition-transform duration-300 group-hover:-translate-y-1">
-              💻
-            </span>
+            <Code2
+              size={36}
+              strokeWidth={1.75}
+              className="transition-transform duration-300 group-hover:-translate-y-1"
+            />
             <span className="text-xl font-semibold">
               Software Development
             </span>
@@ -53,9 +56,11 @@ export default function LandingPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
           <div className="relative h-full flex flex-col items-center justify-end gap-2 text-center p-8">
-            <span className="text-4xl transition-transform duration-300 group-hover:-translate-y-1">
-              🎸
-            </span>
+            <Guitar
+              size={36}
+              strokeWidth={1.75}
+              className="transition-transform duration-300 group-hover:-translate-y-1"
+            />
             <span className="text-xl font-semibold">Music</span>
             <span className="text-sm text-gray-300">
               Bass playing and bookings
