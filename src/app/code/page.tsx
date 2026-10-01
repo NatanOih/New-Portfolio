@@ -9,7 +9,7 @@ import Skills from "@/app/code/_components/Skills/Skills";
 export default function Home() {
   return (
     <main className="flex flex-col gap-6 items-center px-4 ">
-      <div className="w-full overflow-x-hidden">
+      <div className="w-full overflow-x-hidden flex flex-col items-center gap-6">
         <Intro />
         <div className="py-2" />
         <SectionDevider />
@@ -21,7 +21,7 @@ export default function Home() {
       <div className="py-2" />
       <Projects />
       <SectionDevider />
-      <div className="w-full overflow-x-hidden">
+      <div className="w-full overflow-x-hidden flex flex-col items-center gap-6">
         <div className="py-2" />
         <Experience />
         <div className="py-2" />
