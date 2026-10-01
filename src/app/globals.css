@@ -4,6 +4,7 @@
 
 html {
   --line-color: #9ca3af;
+  --radius: 0.5rem;
 }
 
 html.dark {
