@@ -10,10 +10,10 @@ export default function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();
   return (
     <button
-      className="-translate-y-[0.5rem] bg-white/80 w-[3rem] h-[3rem] border-2 border-black overflow-hidden  rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all "
+      className="bg-white/80 w-9 h-9 border border-black/40 overflow-hidden rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all "
       onClick={toggleTheme}
     >
-      {theme === "light" ? <BsSun /> : <BsMoon />}
+      {theme === "light" ? <BsSun size={15} /> : <BsMoon size={15} />}
     </button>
   );
 }
