@@ -126,7 +126,7 @@ export default function LandingPage() {
               size={22}
               className="absolute top-4 right-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
             />
-            <div className="relative h-full flex flex-col items-center justify-end gap-2 text-center p-8">
+            <div className="relative h-full w-full flex flex-col items-center justify-end gap-2 text-center p-8">
               <Code2
                 size={36}
                 strokeWidth={1.75}
@@ -168,7 +168,7 @@ export default function LandingPage() {
               size={22}
               className="absolute top-4 right-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
             />
-            <div className="relative h-full flex flex-col items-center justify-end gap-2 text-center p-8">
+            <div className="relative h-full w-full flex flex-col items-center justify-end gap-2 text-center p-8">
               <Guitar
                 size={36}
                 strokeWidth={1.75}
