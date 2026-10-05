@@ -71,7 +71,7 @@ export const experiencesData = [
     title: "Software Development Journey",
     location: "Self-Taught",
     description:
-      "After Graduating my Degree, I have started to expand my knowledge in python, building small physics engines and after that i moved to web dev content learning javascript, react, nextjs ",
+      "After graduating, I began expanding my technical skills independently — first with Python, building small physics engines, then diving into web development with JavaScript, React, Next.js, and Node.js.",
     icon: React.createElement(FaReact),
     date: "2022",
   },
